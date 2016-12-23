@@ -1,0 +1,71 @@
+          <div class="orbit" role="region" aria-label="RealCraft Motor Boats" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+              <div id = "slogan">
+                  <div class = 'row tb-pad-s' style = " position: relative;margin-left: auto; margin-right: auto;">
+                     <div class = "small-12 columns">
+                         <img id = "slogan-img" src = "/files/main_slogan.png">
+                     </div>
+                  </div>
+
+              </div>
+            <ul class="orbit-container">
+                <!--
+              <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+              <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                    -->
+              
+              <%= slider_imgs(main_page_slider_imgs).html_safe  %>
+
+            </ul>
+          </div>    
+
+<div class = "row">
+    <div class = "small-12 columns tb-pad-m">
+        <%= rc_header("PRODUCTION", "ABOUT") %>
+    </div>
+</div>
+
+<div class = "row">
+    <div class = "small-12 medium-5 columns tb-pad-s">
+        <p>We produce aluminum boats for over 10 years. 
+Our boats can be found in different parts of the world.</p>
+    </div>
+    <div class = "medium-1 columns hide-for-small">
+    </div>
+    <div class = "small-12 medium-6 columns tb-pad-s">
+        <img src = "/files/factory_1.png">
+    </div>
+</div>
+<div class = "row">
+    <div class = "small-12 medium-5 columns tb-pad-s">
+        <img src = "/files/factory_2.png">
+    </div>
+    <div class = "small-12 medium-4 medium-offset-1 columns tb-pad-s">
+       <p >
+           We produce our boats in the modern 
+            factory buildings, specially built by us for 
+            these purposes. They are located in the 
+            nearest suburb of Samara city - one of the 
+            biggest cities on the great river Volga. 
+        </p>
+        <p>
+            At all stages of production using modern 
+            technologies and materials - from the design 
+            study and construction of 3D-CAD-model to 
+            the finish color in the professional coloring 
+            and drying chamber. Sawing is made on CNC 
+            machines, the assembly of the boat ona rigid 
+            jig specifying the exact geometry of the body.
+        </p>
+    </div>
+    <div class = "medium-2 columns hide-for-small">
+    </div>
+    
+</div>
+
+<!--
+
+              <li class="is-active orbit-slide">
+                  <img class="orbit-image" data-interchange="[/slider/index/2_small.jpg, small], [/slider/index/2_medium.jpg, medium], [/slider/index/2_large.jpg, large], [/slider/index/2_xlarge.jpg, xlarge]">
+              </li>
+
+ -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>REALCRAFT</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+      <div id = "header">
+          <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">
+                <div class="top-bar-left">
+                <ul class = 'menu'>
+                    <li>
+                        <a href = "/"><img src = "/files/white_logo.png" style = "height: 30px;"></a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+          </div>
+          <div class="top-bar" id = "main-menu" data-animate="hinge-in-from-top spin-out">
+                <div class = "row float-center">
+                  <ul class="menu">
+                    <li class="medium-2 column top-bar-img hide-for-small-only" ><a href = "/"><img src = "/files/white_logo.png" style = "max-height: 35px;"></a></li>
+                    <li class = "small-3 medium-2 column top-bar-links text-center"><a href="/about">ABOUT</a></li>
+                    <li class = "small-3 medium-3 column top-bar-links text-center"><a href="/realcraft190">RealCraft 190</a></li>
+                    <li class = "small-3 medium-3 column top-bar-links text-center"><a href="/realcraft200">RealCraft 200</a></li>
+                    <li class = "small-3 medium-2 column top-bar-links text-center"><a href="/realcraft200">CONTACTS</a></li>
+                  </ul>
+                </div>
+          </div>
+      </div>
+    <%= yield %>
+  </body>
+</html>

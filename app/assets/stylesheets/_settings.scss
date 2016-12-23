@@ -1,0 +1,107 @@
+
+@import "foundation-sites";
+
+@include foundation-global-styles;
+//-------RealCraft Colors
+$rc-primary-blue: #0047bb;
+$rc-primary-dark-blue: #28334a;
+$rc-secondary-dark-blue: #464e7e;
+$rc-dark-blue: #28334a;
+$rc-gray: #7c878e;
+$rc-red: #ce0037;
+$rc-blue: #489fdf;
+//-----------------------
+$light-gray:#f2f5f7;
+$medium-black:  #232323;
+$thumbnail-border: solid 2px $white;
+///top-bar settings
+$menu-item-color: $white;
+$menu-item-color-active: $dark-gray;
+$menu-item-background-active:none;
+$topbar-background: $rc-primary-dark-blue;
+$topbar-title-spacing: 0;
+$dropdownmenu-arrow-color: $white;
+$topbar-padding: 1.3rem; 
+
+.top-bar 
+{
+    @include breakpoint(small) 
+    {
+       padding: 1rem;
+     }
+    @include breakpoint(medium) 
+    {
+       padding: 1.2rem;
+     }
+     @include breakpoint(large) 
+     {
+        padding: 1.3rem;
+      }
+    a{
+        color: $white; font-weight: bolder;
+        @include breakpoint(small) 
+        {
+           font-size: 0.8rem;
+         }
+        @include breakpoint(medium) 
+        {
+           font-size: 0.9rem;
+         }
+         @include breakpoint(large) 
+         {
+            font-size: 1.0rem;
+          }
+      }
+    a:hover {color: $light-gray;}
+    li.top-bar-links{
+        position:relative;
+        
+
+        @include breakpoint(small) 
+        {
+                   top: 0.1rem;
+         }
+        @include breakpoint(medium) 
+        {
+                   top: 0.2rem;
+         }
+         @include breakpoint(large) 
+         {
+                    top: 0.1rem;
+          }
+        text-align: center;
+    }
+    li.top-bar-img a
+    {
+        padding: 0;
+        text-align: left;
+    }
+}
+
+.row
+{
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 200;
+}
+
+///top-bar settings end
+///tabs
+$tab-item-padding: 0.7rem 0.7rem;
+$tab-content-padding: 0.5rem 0 0 0;
+//$orbit-bullet-margin: 0.4rem;
+///tabs end
+///orbit
+//$orbit-bullet-background: $dark-gray;
+//$orbit-bullet-background-active: $black;
+//$orbit-bullet-margin-bottom: 0.0rem;
+//$orbit-bullet-diameter: 1.0rem;
+//$orbit-bullet-margin: 0.3rem;
+///orbit end
+
+///reveal
+$reveal-background: $white;
+$reveal-width: 90%;
+$reveal-border: none;
+$reveal-offset: 10;
+///reveal end
