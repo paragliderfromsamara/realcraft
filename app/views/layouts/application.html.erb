@@ -16,7 +16,7 @@
                 <div class="top-bar-left">
                 <ul class = 'menu'>
                     <li>
-                        <a href = "/"><img src = "/files/white_logo.png" style = "height: 30px;"></a>
+                        <%= link_to image_tag("/files/white_logo.png", style: "height: 30px;").html_safe, root_path %>
                     </li>
                 </ul>
                 </div>
@@ -25,11 +25,13 @@
           <div class="top-bar" id = "main-menu" data-animate="hinge-in-from-top spin-out">
                 <div class = "row float-center">
                   <ul class="menu">
-                    <li class="medium-2 column top-bar-img hide-for-small-only" ><a href = "/"><img src = "/files/white_logo.png" style = "max-height: 35px;"></a></li>
-                    <li class = "small-3 medium-2 column top-bar-links text-center"><a href="/about">ABOUT</a></li>
-                    <li class = "small-3 medium-3 column top-bar-links text-center"><a href="/realcraft190">RealCraft 190</a></li>
-                    <li class = "small-3 medium-3 column top-bar-links text-center"><a href="/realcraft200">RealCraft 200</a></li>
-                    <li class = "small-3 medium-2 column top-bar-links text-center"><a href="/realcraft200">CONTACTS</a></li>
+                    <li class="medium-2 column top-bar-img hide-for-small-only" > 
+                        <%= link_to image_tag("/files/white_logo.png", style: "max-height: 35px;").html_safe, root_path %>
+                    </li>
+                    <li class = "small-3 medium-2 column top-bar-links text-center"><%= link_to t(:about), about_path %></li>
+                    <li class = "small-3 medium-3 column top-bar-links text-center"><%= link_to "RealCraft 190", realcraft_190_path %></li>
+                    <li class = "small-3 medium-3 column top-bar-links text-center"><%= link_to "RealCraft 200", realcraft_200_path %></li>
+                    <li class = "small-3 medium-2 column top-bar-links text-center"><%= link_to t(:contacts), contacts_path %></li>
                   </ul>
                 </div>
           </div>

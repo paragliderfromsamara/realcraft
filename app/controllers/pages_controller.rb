@@ -4,6 +4,9 @@ class PagesController < ApplicationController
 
   def about
   end
+  
+  def contacts
+  end
 
   def realcraft_190
     @boat = real_craft_190

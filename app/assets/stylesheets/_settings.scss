@@ -1,16 +1,8 @@
 
 @import "foundation-sites";
+@import "realcraft";
 
 @include foundation-global-styles;
-//-------RealCraft Colors
-$rc-primary-blue: #0047bb;
-$rc-primary-dark-blue: #28334a;
-$rc-secondary-dark-blue: #464e7e;
-$rc-dark-blue: #28334a;
-$rc-gray: #7c878e;
-$rc-red: #ce0037;
-$rc-blue: #489fdf;
-//-----------------------
 $light-gray:#f2f5f7;
 $medium-black:  #232323;
 $thumbnail-border: solid 2px $white;
