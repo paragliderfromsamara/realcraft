@@ -5,7 +5,7 @@ module ApplicationHelper
   def main_page_slider_imgs #изображения слайдера с главной страницы
     [
       "/slider/index/1_small.jpg",
-      "/slider/index/2_small.jpg"
+      "/slider/index/4_small.jpg"
     ]
   end
   
@@ -45,6 +45,9 @@ fishermen."
                     CONDITIONS"
     v = {
       name: "REALCRAFT 190",
+      slider_images: [
+                        "/slider/rc190/1_small.jpg"
+                     ],
       design_category: "C",
       slogan_ru: @ru_slogan, 
       slogan_en: @en_slogan, 

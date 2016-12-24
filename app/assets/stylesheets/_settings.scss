@@ -77,19 +77,6 @@ $topbar-padding: 1.3rem;
     z-index: 200;
 }
 
-///top-bar settings end
-///tabs
-$tab-item-padding: 0.7rem 0.7rem;
-$tab-content-padding: 0.5rem 0 0 0;
-//$orbit-bullet-margin: 0.4rem;
-///tabs end
-///orbit
-//$orbit-bullet-background: $dark-gray;
-//$orbit-bullet-background-active: $black;
-//$orbit-bullet-margin-bottom: 0.0rem;
-//$orbit-bullet-diameter: 1.0rem;
-//$orbit-bullet-margin: 0.3rem;
-///orbit end
 
 ///reveal
 $reveal-background: $white;
@@ -97,3 +84,39 @@ $reveal-width: 90%;
 $reveal-border: none;
 $reveal-offset: 10;
 ///reveal end
+
+//tabs
+$tab-item-padding: 1.3rem 1.3rem;
+$tab-content-padding: 0.5rem 0 0 0;
+$tab-color: $white;
+$tab-active-color: $black;
+$tab-background: $rc-gray;
+$tab-content-border: none;
+//$tab-item-font-size: 1.0rem;
+.tabs
+{
+    a.no-style
+    {
+        color: $white;
+        font-weight: bolder;
+        text-decoration: none;
+        @include breakpoint(small) {font-size: 0.7rem;}
+        @include breakpoint(medium) {font-size: 0.85rem;}
+        @include breakpoint(large) {font-size: 1.0rem;}
+    }
+    a.no-style:hover
+    {
+        color: $rc-dark-blue;
+    }
+    .is-active
+    {
+        a.no-style
+        {
+            color: $rc-dark-blue;
+        }
+    }
+}
+
+
+
+//

@@ -18,7 +18,7 @@
             </div>
       </div>
     <ul class="orbit-container">
-        <%= slider_imgs(main_page_slider_imgs).html_safe  %>
+        <%= slider_imgs(@boat[:slider_images]).html_safe  %>
     </ul>
 </div> 
 
@@ -122,17 +122,15 @@
     </div>
 
 </div>
-<ul class="tabs" data-tabs id="example-tabs">
+<ul class="tabs" data-deep-link="true" data-tabs id="rc-data-tabs" >
   <div class = "row">
-      <div class ="small-12 columns">
-          <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><%= t(:modifications)%></a></li>
-          <li class="tabs-title"><a href="#panel2"><%= t(:engeneering)%></a></li>
-          <li class="tabs-title"><a href="#panel3"><%= t(:photos)%></a></li>
-          <li class="tabs-title"><a href="#panel4"><%= t(:videos)%></a></li>
-      </div>
+          <li class="tabs-title small-6 medium-3 columns text-center is-active "><a class = 'no-style' href="#panel1" aria-selected="true"><%= t(:modifications).mb_chars.upcase%></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#panel2"><%= t(:engeneering).mb_chars.upcase %></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#panel3"><%= t(:photos).mb_chars.upcase %></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#panel4"><%= t(:videos).mb_chars.upcase %></a></li>
   </div>
 </ul>
-<div class="tabs-content" data-tabs-content="example-tabs">
+<div class="tabs-content" data-tabs-content="rc-data-tabs">
   <div class="tabs-panel is-active" id="panel1">
     <div class="row tb-pad-s">
         <div class = "small-12 columns">
@@ -151,7 +149,6 @@
                     <%= image_tag i %>
                 </div>
             <%end%>
-        
     </div>
   </div>
   <div class="tabs-panel" id="panel2">
