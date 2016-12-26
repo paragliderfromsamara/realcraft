@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
+  default_title: "REALCRAFT-Аллюминиевые моторные лодки"
   about: "О НАС"
   contacts: "КОНТАКТЫ"
   m_short: "м"
@@ -29,6 +30,7 @@ ru:
   pers_short: "ч"
   pers_full: "чeловек"
   scheme: "Схема"
+
   
   #boat_parameters names
   crew_limit: "пассажировместимость"

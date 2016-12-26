@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  default_title: "REALCRAFT-Motor Boats"
   about: "ABOUT"
   contacts: "CONTACTS"
   m_short: "m"
