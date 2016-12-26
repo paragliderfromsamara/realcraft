@@ -139,18 +139,64 @@
     </div>
     <div class="row tb-pad-s">
         <div class = "small-12 columns">
-            Realcraft 190 boats can be delivered
-            in several versions of equipment packages of bow cockpit and main cockpit seats
+            <%= @boat["modifications_present_text_#{cur_locale}".to_sym ]%>
         </div>
     </div>
-    <div class="row tb-pad-s">
-            <%@boat[:modifications][0][:model_view_imgs].each do |i|%>
-                <div class = "small-12 medium-6 column tb-pad-s">
-                    <%= image_tag i %>
-                </div>
-            <%end%>
-    </div>
+    <% if !@boat[:modifications].blank?  %>
+       <% @boat[:modifications].each do |m| %>
+                  <hr/>   
+       <div class = "rc-modification-box tb-pad-s">
+           <div class="row">
+               <div class = "large-6 show-for-large end columns">
+                   <h3><%= m[:name] %></h3>
+                       <p>
+                           <%= m["description_#{cur_locale}".to_sym] %>
+                       </p>
+               </div>
+           </div>
+           <div class = "row tb-pad-s">
+               <div class = "small-12 medium-6 hide-for-large columns">
+                   <h3><%= m[:name] %></h3>
+                       <p>
+                           <%= m["description_#{cur_locale}".to_sym] %>
+                       </p>
+               </div>
+               <% m[:model_view_imgs].each do |i|%>
+                   <div class = "small-12 medium-6 large-4 columns">
+                       
+                       <div style = "position: relative;"><div style = "position: absolute; top: 10px; right: 10px; z-index:200;"><h7><%= i[:title] %></h7></div></div>
+                       <%= image_tag i[:url] %>
+                   </div>
+               <%end%>
+           </div>
+           <div class = "row">
+               <div class = "small-12 columns">
+               <h5>
+                   <%= t(:crew_accomodation).mb_chars.upcase %>
+               </h5>
+           </div>
+           </div>
+           <div class = "row tb-pad-s">
+               <div class = "medium-12 large-2 columns">
+                   <%=  t(:crew_accomodation_txt, modification: "<b>#{m[:name]}</b>", crew_limit: @boat[:crew_limit].to_i.to_s).html_safe  %>
+               </div>
+               <% j=0 %>
+               <% m[:acc_views_imgs].each do |i|%>
+                   <%j+=1%>
+                   <div class = "small-12 medium-6 large-5 columns">
+                       <h7><%= t(:scheme) %> <%= j.to_s %></h7>
+                       <%= image_tag i %>
+                   </div>
+               <%end%>
+           </div>
+           </div>
+ 
+       <%end%> 
+    <%end%>
+
+
   </div>
+
   <div class="tabs-panel" id="panel2">
     <div class = "tb-pad-s">
         <div class = "row">
@@ -191,6 +237,24 @@
             <div class = "small-12 columns">
                 <%= rc_header(t(:videos), @boat[:name])  %>
             </div>
+        </div>
+        <div class = "row tb-pad-m">
+            <% if @boat[:videos].blank? %>
+                <div class = "small-12 columns">
+                    <p>
+                        <%= t(:no_videos_msg) %>
+                    </p>
+                </div>
+            <%else%>
+                <% @boat[:videos].each do |v|%>
+                <div class = "small-12 columns">
+                    <div class="flex-video">
+                      <%= v.html_safe %>
+                    </div>
+                </div>
+                <%end%>
+            <%end%>
+
         </div>
     </div>
   </div>

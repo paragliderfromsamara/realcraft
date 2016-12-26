@@ -14,7 +14,7 @@ $topbar-background: $rc-primary-dark-blue;
 $topbar-title-spacing: 0;
 $dropdownmenu-arrow-color: $white;
 $topbar-padding: 1.3rem; 
-
+$hr-width: 100%;
 .top-bar 
 {
     @include breakpoint(small) 

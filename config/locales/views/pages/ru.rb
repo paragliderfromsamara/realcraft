@@ -28,6 +28,12 @@
       engeneering: "Инженерия",
       modifications: "Модификации",
       photos: "Фото",
-      videos: "Видео"
+      videos: "Видео",
+      crew_accomodation: "размещение пассажиров",
+      crew_accomodation_txt: "В модификации %{modification} %{crew_limit} человек могут быть размещены согласно следующим схемам.",
+      top_view: "Вид сверху",
+      bow_view: "Вид с носа",
+      aft_view: "Вид с кормы"
+      
     }
 }

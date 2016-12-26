@@ -28,6 +28,8 @@ en:
   hp_short: "hp"
   pers_short: "p"
   pers_full: "persons"
+  scheme: "Scheme"
+  
   #boat_parameters names
   crew_limit: "Crew limit"
   length_of_hull: "Length of hull"
@@ -39,3 +41,7 @@ en:
   bot_deadrise_angle: "Bottom deadrise angle"
   empty_craft_mass: "Empty craft mass"
   #boat_parameters names end
+
+  #messages
+  no_videos_msg: "No videos were added."
+  #messages_end

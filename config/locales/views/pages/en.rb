@@ -28,6 +28,11 @@
       engeneering: "Engeneering",
       modifications: "Modifications",
       photos: "Photos",
-      videos: "Videos"
+      videos: "Videos", 
+      crew_accomodation: "crew accomodation",
+      crew_accomodation_txt: "%{crew_limit} people %{modification} can be accommodated according to the following schemes.",
+      top_view: "Top view",
+      bow_view: "Bow view",
+      aft_view: "Aft view"
     }
 }

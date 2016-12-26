@@ -20,9 +20,9 @@ module ApplicationHelper
   
   def model_view_imgs_name
     [
-      "top_model_view.jpg",
-      "back_model_view.jpg",
-      "forward_model_view.jpg"
+      {url: "top_model_view.jpg", title: t(:top_view)},
+      {url: "back_model_view.jpg", title: t(:aft_view)},
+      {url: "forward_model_view.jpg", title: t(:bow_view)}
     ]
   end
   
@@ -45,6 +45,8 @@ fishermen."
                     CONDITIONS"
     v = {
       name: "REALCRAFT 190",
+      modifications_present_text_en: "Realcraft 190 boats can be delivered in several versions of equipment packages of bow cockpit and main cockpit seats",
+      modifications_present_text_ru: "Лодки Realcraft 190 могут поставляться в двух модификациях носового кокпита и кресел основного кокпита.",
       slider_images: [
                         "/slider/rc190/1_small.jpg"
                      ],
@@ -62,11 +64,24 @@ fishermen."
       max_motor_pwr: "50#{t :hp_short}",
       bot_deadrise_angle: "11˚",
       empty_craft_mass: "347-389#{t :kg_short}",
+      videos: [
+        "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/fxN92HTzx4U\" frameborder=\"0\" allowfullscreen></iframe>"
+      ],
       modifications: [
                         {
-                          name: "Comfort",
-                          model_view_imgs: model_view_imgs_name.map {|i| "/boat_pages/rc190/comfort/#{i}"}
-                        }
+                          name: "BD Comfort",
+                          model_view_imgs: model_view_imgs_name.map {|i| {url: "/boat_pages/rc190/comfort/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: ["/boat_pages/rc190/comfort/acc_1.jpg", "/boat_pages/rc190/comfort/acc_2.jpg"],
+                          description_en: "BD means \"BowDeck\" - with bow cockpit closed with removable cover-deck. It modification has three fore lockers and fixed aft locker, which fold out making a comfortable sleeping accommodation.",
+                          description_ru: "BD расшифровывается как \"BowDeck\" - с закрытым носовым кокпитом со съёмным люком. Эта модификация снабжена тремя носовыми рундуками и одним кормовым, который раскладываясь образует комфортное спальное место."
+                        },
+                        {
+                          name: "BR Light",
+                          model_view_imgs: model_view_imgs_name.map {|i| {url: "/boat_pages/rc190/light/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: ["/boat_pages/rc190/light/acc_1.jpg", "/boat_pages/rc190/light/acc_2.jpg"],
+                          description_en: "BR means \"BowRider\" - With open bow cockpit. It modification has fore swivel seats on support and fixed aft locker.",
+                          description_ru: "BR расшифровывается как \"BowRider\" - с открытым носовым кокпитом. Данная модификация снабжена удобными передними поворотными сиденьями и кормовым рундуком."
+                        },
                      ]
     }
   end

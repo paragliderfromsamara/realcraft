@@ -28,6 +28,8 @@ ru:
   hp_short: "лc"
   pers_short: "ч"
   pers_full: "чeловек"
+  scheme: "Схема"
+  
   #boat_parameters names
   crew_limit: "пассажировместимость"
   length_of_hull: "длина корпуса"
@@ -39,5 +41,9 @@ ru:
   bot_deadrise_angle: "килеватость"
   empty_craft_mass: "масса пустого судна"
   #boat_parameters names end
+  
+  #messages
+  no_videos_msg: "Не было добавлено ни одного видео."
+  #messages_end
   
   
