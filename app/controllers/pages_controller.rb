@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def realcraft_200
-    @boat = real_craft_190#real_craft_200
+    @boat = real_craft_200
+    @title = @boat[:name]
   end
 end

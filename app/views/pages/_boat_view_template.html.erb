@@ -1,5 +1,5 @@
 <div class="orbit" role="region" aria-label="RealCraft Motor Boats" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-     <div class = "rc-fog hard-fog white-bg"><!-- Белая пелена над фотографией--></div> 
+     <div class = "rc-fog medium-fog white-bg"><!-- Белая пелена над фотографией--></div> 
       <div id = "slogan">
             <div class = "row">
                 <div class = "small-12 medium-6 large-5 columns">
@@ -247,7 +247,7 @@
                 </div>
             <%else%>
                 <% @boat[:videos].each do |v|%>
-                <div class = "small-12 columns">
+                <div class = "small-12 medium-8 large-7 small-centered columns">
                     <div class="flex-video">
                       <%= v.html_safe %>
                     </div>

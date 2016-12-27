@@ -4,6 +4,7 @@ module ApplicationHelper
   end
   def main_page_slider_imgs #изображения слайдера с главной страницы
     [
+      "/slider/rc200/3_slider_small.jpg",
       "/slider/index/1_small.jpg",
       "/slider/index/4_small.jpg"
     ]
@@ -48,7 +49,9 @@ fishermen."
       modifications_present_text_en: "Realcraft 190 boats can be delivered in several versions of equipment packages of bow cockpit and main cockpit seats",
       modifications_present_text_ru: "Лодки Realcraft 190 могут поставляться в двух модификациях носового кокпита и кресел основного кокпита.",
       slider_images: [
-                        "/slider/rc190/1_small.jpg"
+                        "/slider/rc190/1_small.jpg",
+                        "/slider/rc190/2_small.jpg",
+                        "/slider/rc190/3_small.jpg"
                      ],
       design_category: "C",
       slogan_ru: @ru_slogan, 
@@ -86,6 +89,58 @@ fishermen."
     }
   end
   
+  def real_craft_200
+    @ru_head_desc = "Realсraft 200 это лодка с передним размещением консолей."
+    @en_head_desc = "The newest Realcraft 200 is a boat with a rear location
+of consoles. Such arrangement together with big fore cockpit is vital for various rescue and patrol operations as well as diving, fishing, towing skiers, transportation
+of large loads to the summer house on the islands or just cruises with a good company of friends."
+    @ru_slogan = "Для заядлых рыбаков, патруля, спасательных операций ну и конечно для приключений в компании друзей.".mb_chars.upcase
+    @en_slogan = "FOR TRUE FISHERMEN, RESCUE AND PATROL OPERATIONS OR JUST CRUISES WITH A GOOD COMPANY OF FRIENDS"
+    v = {
+      name: "REALCRAFT 200",
+      modifications_present_text_en: "Realcraft 190 boats can be delivered in several versions of equipment packages of bow cockpit and main cockpit seats",
+      modifications_present_text_ru: "Лодки Realcraft 190 могут поставляться в двух модификациях носового кокпита и кресел основного кокпита.",
+      slider_images: [
+                        "/slider/rc200/4_slider_small.jpg",
+                        "/slider/rc200/1_slider_small.jpg",
+                        "/slider/rc200/2_slider_small.jpg",
+                        "/slider/rc200/3_slider_small.jpg",
+                     ],
+      design_category: "C",
+      slogan_ru: @ru_slogan, 
+      slogan_en: @en_slogan, 
+      header_description_ru: @ru_head_desc, 
+      header_description_en: @en_head_desc, 
+      crew_limit: "5#{t :pers_short}",
+      length_of_hull: "5.1#{t :m_short}",
+      beam_of_hull: "1.9#{t :m_short}",
+      max_permitted_load: "500#{t :kg_short}",
+      freeboard_thickness: "2#{t :mm_short}",
+      hull_thickness: "4#{t :mm_short}",
+      max_motor_pwr: "50#{t :hp_short}",
+      bot_deadrise_angle: "13˚",
+      empty_craft_mass: "370-390#{t :kg_short}",
+      videos: [
+        "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/J0JQXQbo01M\" frameborder=\"0\" allowfullscreen></iframe>"
+      ],
+      modifications: [
+                        {
+                          name: "Pro",
+                          model_view_imgs: model_view_imgs_name.map {|i| {url: "/boat_pages/rc200/pro/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: ["/boat_pages/rc200/acc_1.jpg", "/boat_pages/rc200/acc_2.jpg"],
+                          description_en: "PRO Version goes with the direct plastic or tempered glass",
+                          description_ru: "Версия \"Pro\" выпускается с прямым ветровым остеклением. Остекление может быть выполнено как из пластика, так и калёного стекла"
+                        },
+                        {
+                          name: "Navi",
+                          model_view_imgs: model_view_imgs_name.map {|i| {url: "/boat_pages/rc200/navi/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: ["/boat_pages/rc200/acc_1.jpg", "/boat_pages/rc200/acc_2.jpg"],
+                          description_en: "Navi version with the curved plastic glass",
+                          description_ru: "Модификация \"Navi\" выпускается с гнутым ветровым остеклением выполненным из оргстекла."
+                        },
+                     ]
+    }
+  end
   
   def slider_imgs(imgs) #imgs - это массив содерщий ссылки на фотографии small
     return "" if imgs.blank?

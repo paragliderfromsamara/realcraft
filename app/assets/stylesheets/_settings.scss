@@ -1,11 +1,43 @@
-
+@font-face {
+    font-family: 'clear_sans_regular';
+    src: url('/fonts/ClearSans/TTF/ClearSans-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_medium';
+    src: url('/fonts/ClearSans/TTF/ClearSans-Medium.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_bold';
+    src: url('/fonts/ClearSans/TTF/ClearSans-Bold.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_italic';
+    src: url('/fonts/ClearSans/TTF/ClearSans-Italic.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'clear_sans_bold_italic';
+    src: url('/fonts/ClearSans/TTF/ClearSans-BoldItalic.ttf') format('truetype');
+    font-style: normal;
+}
 @import "foundation-sites";
 @import "realcraft";
+$regular-fonts: 'clear_sans_regular','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$bold-fonts: 'clear_sans_bold','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$medium-fonts: 'clear_sans_medium','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 
+$body-font-family: "clear_sans_regular",'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: 'clear_sans_bold','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif ;
 @include foundation-global-styles;
+ 
+
 $light-gray:#f2f5f7;
 $medium-black:  #232323;
 $thumbnail-border: solid 2px $white;
+
 ///top-bar settings
 $menu-item-color: $white;
 $menu-item-color-active: $dark-gray;
@@ -30,7 +62,7 @@ $hr-width: 100%;
         padding: 1.3rem;
       }
     a{
-        color: $white; font-weight: bolder;
+        color: $white; font-family: $bold-fonts;
         @include breakpoint(small) 
         {
            font-size: 0.8rem;
@@ -98,7 +130,7 @@ $tab-content-border: none;
     a.no-style
     {
         color: $white;
-        font-weight: bolder;
+        font-family: $medium-fonts;
         text-decoration: none;
         @include breakpoint(small) {font-size: 0.7rem;}
         @include breakpoint(medium) {font-size: 0.85rem;}
