@@ -20,7 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
+  coming_soon: "Скоро"
   default_title: "REALCRAFT-Аллюминиевые моторные лодки"
+  default_meta_tags: "моторные лодки, лодки"
+  default_meta_description: "Производство современных алюминиевых моторных лодок"
   about: "О НАС"
   contacts: "КОНТАКТЫ"
   m_short: "м"

@@ -20,7 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  coming_soon: "Coming soon"
   default_title: "REALCRAFT-Motor Boats"
+  default_meta_tags: "motor boat, boat"
+  default_meta_description: "These motor boats were born on a great river, which can be serene as a quiet pond and fearsome as a stormy sea."
   about: "ABOUT"
   contacts: "CONTACTS"
   m_short: "m"
