@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t(:default_title)%></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+      <div class = "row tb-pad-m">
+          <div class = "small-6 small-centered columns">
+              <%= image_tag "logo_vertical_colored.png", style: "height: 150px;", class: "float-center" %>
+          </div>
+      </div>
+  </body>
+</html>

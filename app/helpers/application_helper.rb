@@ -1,7 +1,4 @@
 module ApplicationHelper
-  def cur_locale
-       I18n.locale
-  end
   def main_page_slider_imgs #изображения слайдера с главной страницы
     [
       "/slider/rc200/3_slider_small.jpg",
