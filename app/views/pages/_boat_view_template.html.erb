@@ -122,16 +122,17 @@
     </div>
 
 </div>
-<ul class="tabs" data-deep-link="true" data-tabs id="rc-data-tabs" >
+
+<ul id = "rc-data-tabs" class="tabs" data-tabs data-deep-link="true" data-turbolinks="false" >
   <div class = "row">
-          <li class="tabs-title small-6 medium-3 columns text-center is-active "><a class = 'no-style' href="#panel1" aria-selected="true"><%= t(:modifications).mb_chars.upcase%></a></li>
-          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#panel2"><%= t(:engeneering).mb_chars.upcase %></a></li>
-          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#panel3"><%= t(:photos).mb_chars.upcase %></a></li>
-          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#panel4"><%= t(:videos).mb_chars.upcase %></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center is-active"><a class = 'no-style'  href="#modifications" aria-selected="true"><%= t(:modifications).mb_chars.upcase%></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#engeneering"><%= t(:engeneering).mb_chars.upcase %></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#photos"><%= t(:photos).mb_chars.upcase %></a></li>
+          <li class="tabs-title small-6 medium-3 columns text-center"><a class = 'no-style' href="#videos"><%= t(:videos).mb_chars.upcase %></a></li>
   </div>
 </ul>
 <div class="tabs-content" data-tabs-content="rc-data-tabs">
-  <div class="tabs-panel is-active" id="panel1">
+  <div class="tabs-panel is-active" id="modifications">
     <div class="row tb-pad-s">
         <div class = "small-12 columns">
                 <%= rc_header(t(:modifications), @boat[:name])  %>
@@ -197,7 +198,7 @@
 
   </div>
 
-  <div class="tabs-panel" id="panel2">
+  <div class="tabs-panel" id="engeneering">
     <div class = "tb-pad-s">
         <div class = "row">
             <div class = "small-12 columns">
@@ -205,33 +206,47 @@
             </div>
         </div>
         <div class = "row">
-            <div class = "small-4 columns tb-pad-s">
+            <div class = "small-12 medium-5 columns tb-pad-s">
                 <p>
-                    Strong hull with a 4-mm bottom of 5083 Al-Mg sheet together with a perfect seagoing performance that
-                    is justified by carefully estimated body lines with 11° dead rise angle at the transom provide smooth sailing from first open waters to the late fall. Do not fear storms, stony shores, drowned logs and even floating ice floes. Moreover, the boat is quite cost effective: Realcraft 190 can raise the maximum speed of over 50 kmph due to a 40 powered motor. If the boat carries five people, it shall plane on the water surface of more than 40 kmph. In case you mount
-                    an engine of power capability of 50 horsepower these indicators will be much better.
+                    <%= @boat["engeneering_text_#{cur_locale}".to_sym] %>
                 </p>
-            
             </div>
-            <div class = "small-12 medium-5 medium-offset-1 columns tb-pad-s">
-                <p>
-
-                </p>
+            <div class = "small-12 medium-7 columns tb-pad-s">
+                <img src = "<%= @boat[:engeneering_img] %>">
             
             </div>
         </div>
     </div>
   </div>
-  <div class="tabs-panel" id="panel3">
+  <div class="tabs-panel" id="photos">
     <div class = "tb-pad-s">
         <div class = "row">
             <div class = "small-12 columns">
                 <%= rc_header(t(:photos), @boat[:name])  %>
             </div>
         </div>
+        
+            <% if @boat[:photos].blank? %>
+            <div class = "row tb-pad-m">
+                <div class = "small-12 columns">
+                    <p>
+                        <%= t(:no_photos_msg) %>
+                    </p>
+                </div>
+            </div>
+            <% else %>
+            <div class="row small-up-2 medium-up-2 large-up-3">
+                <% @boat[:photos].each do |p| %>
+                  <div class="column column-block tb-pad-s">
+                        <a><%= image_tag p[:thumbnail], class: "float-center kra-ph-box", "data-box-phs".to_sym => "[#{p[:small]}, small], [#{p[:medium]}, medium], [#{p[:large]}, large], [#{p[:xlarge]}, xlarge]" %></a>
+                  </div>
+                <%end%>
+            </div>
+            <%end%>
+        
     </div>
   </div>
-  <div class="tabs-panel" id="panel4">
+  <div class="tabs-panel" id="videos">
     <div class = "tb-pad-s">
         <div class = "row">
             <div class = "small-12 columns">
@@ -248,7 +263,7 @@
             <%else%>
                 <% @boat[:videos].each do |v|%>
                 <div class = "small-12 medium-8 large-7 small-centered columns">
-                    <div class="flex-video">
+                    <div class="flex-video widescreen">
                       <%= v.html_safe %>
                     </div>
                 </div>

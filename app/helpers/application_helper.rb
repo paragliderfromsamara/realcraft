@@ -7,6 +7,10 @@ module ApplicationHelper
     ]
   end
   
+  def make_photos_links(photos, boat_folder)
+    url = "#{boat_folder}/photos/"
+    photos.map {|p| {xlarge: "#{url}#{p}_xlarge.jpg", large: "#{url}#{p}_large.jpg", medium: "#{url}#{p}_medium.jpg", small: "#{url}#{p}_small.jpg", thumbnail: "#{url}#{p}_thumbnail.jpg"}}
+  end
   
   def rc_header(big, small = nil, small_bot = nil)
     v = ""
@@ -25,6 +29,7 @@ module ApplicationHelper
   end
   
   def real_craft_190
+    boat_folder = "/boat_pages/rc190"
     @ru_head_desc = "Realсraft 190 позволит Вам ощутить всё разнообразие отдыха на воде. "
     @en_head_desc = "Realсraft 190 can provide you a wide range of leisure
 activities on the water. Increased main cockpit, wide
@@ -64,6 +69,7 @@ fishermen."
       max_motor_pwr: "50#{t :hp_short}",
       bot_deadrise_angle: "11˚",
       empty_craft_mass: "347-389#{t :kg_short}",
+      photos: make_photos_links([1,2,3,4], boat_folder),
       videos: [
         "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/fxN92HTzx4U\" frameborder=\"0\" allowfullscreen></iframe>"
       ],
@@ -82,11 +88,16 @@ fishermen."
                           description_en: "BR means \"BowRider\" - With open bow cockpit. It modification has fore swivel seats on support and fixed aft locker.",
                           description_ru: "BR расшифровывается как \"BowRider\" - с открытым носовым кокпитом. Данная модификация снабжена удобными передними поворотными сиденьями и кормовым рундуком."
                         },
-                     ]
+                     ],
+     engeneering_text_en: "Strong hull with a 4-mm bottom of 5083 Al-Mg sheet together with a perfect seagoing performance that is justified by carefully estimated body lines with 11° dead rise angle at the transom provide smooth sailing from first open waters to the late fall. Do not fear storms, stony shores, drowned logs and even floating ice floes. Moreover, the boat is quite cost effective: Realcraft 190 can raise the maximum speed of over 50 kmph due to a 40 powered motor. If the boat carries five people, it shall plane on the water surface of more than 40 kmph. In case you mount an engine of power capability of 50 horsepower these indicators will be much better.",
+     engeneering_text_ru: "ru_text",
+     engeneering_img: "/boat_pages/rc190/schema.png"
+                     
     }
   end
   
   def real_craft_200
+    boat_folder = "/boat_pages/rc200"
     @ru_head_desc = "Realсraft 200 это лодка с передним размещением консолей."
     @en_head_desc = "The newest Realcraft 200 is a boat with a rear location
 of consoles. Such arrangement together with big fore cockpit is vital for various rescue and patrol operations as well as diving, fishing, towing skiers, transportation
@@ -117,6 +128,7 @@ of large loads to the summer house on the islands or just cruises with a good co
       max_motor_pwr: "50#{t :hp_short}",
       bot_deadrise_angle: "13˚",
       empty_craft_mass: "370-390#{t :kg_short}",
+      photos: make_photos_links([1,2,3,4], boat_folder),
       videos: [
         "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/J0JQXQbo01M\" frameborder=\"0\" allowfullscreen></iframe>"
       ],
@@ -135,7 +147,13 @@ of large loads to the summer house on the islands or just cruises with a good co
                           description_en: "Navi version with the curved plastic glass",
                           description_ru: "Модификация \"Navi\" выпускается с гнутым ветровым остеклением выполненным из оргстекла."
                         },
-                     ]
+                     ],
+     engeneering_text_en: "The fore cockpit along the perimeter is belted with railings which increase the safety of passengers, while fishermen may use it for fastening of spinnings. There is a locker-seat in the fore, intended for storage of the anchor and mooring equipment, which will be useful for landfalls. There are two lockers, located along the broadside in front of the consoles, as
+well as shelves where you can put fishing rods. You can find a standard portable petrol tank between the broadside lockers under the lid of the floor:
+this location increases the alignment as well as corresponds with ISO European Requirements
+on a distance spacing of petrol and accumulators. There is also a big section with the accumulator and the main switcher under the sternmost couch.",
+     engeneering_text_ru: "ru_text",
+     engeneering_img: "/boat_pages/rc200/schema.png"
     }
   end
   

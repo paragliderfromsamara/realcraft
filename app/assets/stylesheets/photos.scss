@@ -1,0 +1,36 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//контейнер в котором содержатся фотографии в модальной форме
+
+div#photo-viewer
+{
+    #ph-container
+    {
+        position: relative;
+        width: 100%;
+        //стрелки
+        .arrows
+        {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            //background-color: white;
+            cursor: pointer;
+        }
+        #prev_ph
+        {
+            left: 0px;
+            text-align: left;
+        }
+    
+        #next_ph
+        {
+            right: 0px;
+            text-align: right;
+        }
+    } 
+}
+
