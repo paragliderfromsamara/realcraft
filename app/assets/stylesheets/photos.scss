@@ -31,10 +31,21 @@ div#photo-viewer
             
             span
             {
+                @include breakpoint(small)
+                {
+                    font-size: 1.5rem;
+                }
+                @include breakpoint(medium)
+                {
+                    font-size: 2.3rem;
+                }
+                @include breakpoint(large)
+                {
+                    font-size: 4.0rem;
+                }
                 color: white;
-                font-size: 4rem;
                 position: relative;
-                top: 42%;
+                top: 45%;
                 
             }
         }
