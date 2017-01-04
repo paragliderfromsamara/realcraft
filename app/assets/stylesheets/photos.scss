@@ -29,6 +29,7 @@ div#photo-viewer
         color: $white;
         left: 10px;
         top: 10px;
+        font-size: 0.85rem;
         @include my_opacity(0.8);
     }
     #ph-container

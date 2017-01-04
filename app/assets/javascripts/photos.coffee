@@ -10,6 +10,8 @@ counterId = "ph_counter"
 middleImgEscId = "close_reveral"
 viewer = null
 enableViewerKeys = true #когда происходит переход на другое фото, флаг ставится в false, как только произошел переход флаг возвращается в состояние true
+curCollectionName = undefined
+ 
 
 updViewerCounterText = (idx, count)->
     if count > 1
@@ -23,8 +25,14 @@ updViewerCounterText = (idx, count)->
 togglleArrow = (arr_id, act_is_show)->
     if act_is_show then viewer.find("##{arr_id}").show() else viewer.find("##{arr_id}").hide()
 
+showFunc = (el)->
+    $(el).attr("is-cur-img", "true")
+    enableViewerKeys = true
+
 showPhotoByIdx = (idx)->
-    phsCount = viewer.find("img[data-image-idx]").length
+    curColTrueSelector = if curCollectionName is undefined then "" else "[rc-box-collection=#{curCollectionName}]" 
+    curColFalseSelector = if curCollectionName is undefined then "" else "[rc-box-collection!=#{curCollectionName}]"
+    phsCount = viewer.find("#{curColTrueSelector}").length
     if idx < 1
         idx = 1
     else if idx > phsCount
@@ -32,16 +40,16 @@ showPhotoByIdx = (idx)->
     togglleArrow(prevArrId, (idx>1))
     togglleArrow(nextArrId, (idx<phsCount))
     updViewerCounterText(idx, phsCount)
-    
-    viewer.find("img[data-image-idx!=#{idx}]").hide(0,
-                                                        ()-> 
-                                                            $(this).attr("is-cur-img", "false")
-                                                            viewer.find("img[data-image-idx=#{idx}]").fadeIn(300, ()-> 
-                                                                                                                        $(this).attr("is-cur-img", "true")
-                                                                                                                        enableViewerKeys = true
-                                                                                                            )
-    )
-    #console.log "#{idx} -- #{phsCount}"
+    if curCollectionName isnt undefined then viewer.find("img[rc-box-collection!=#{curCollectionName}]").hide(0, ()-> $(this).attr("is-cur-img", "false"))
+    if phsCount > 1
+        viewer.find("img[data-image-idx!=#{idx}]#{curColTrueSelector}").hide(0,
+                                                            ()-> 
+                                                                $(this).attr("is-cur-img", "false")
+                                                                viewer.find("img[data-image-idx=#{idx}]#{curColTrueSelector}").fadeIn(300, ()-> showFunc(this))
+                                                                )
+    else
+        viewer.find("img[data-image-idx=#{idx}]#{curColTrueSelector}").fadeIn(300, ()-> showFunc(this))
+    console.log "#{idx} -- #{phsCount}"
 
 getCurIdx = ()->
     parseInt(viewer.find("img[is-cur-img=true]").attr("data-image-idx"))
@@ -54,20 +62,42 @@ changePhoto = (id)->
         idx++
     showPhotoByIdx(idx)
 
+initBoxPhotos = (phs)->
+    clc = idx = 0
+    collectionList = ""
+    box_phs = ""
+    colName = ""
+    for p in phs
+        if !p.hasAttribute("rc-box-collection")
+            clc++
+            idx = 1
+            colName = "collection_#{clc}"
+        else
+            colName = $(p).attr("rc-box-collection")
+            if collectionList.indexOf(colName) < 0
+                idx = 1
+                collectionList+=" #{colName} "
+            else
+                idx = $("[rc-box-collection=#{colName}][data-image-idx]").length + 1
+        $(p).parents("a").attr("data-open", viewerElementId)
+        $(p).attr("rc-box-collection", colName)
+        $(p).attr("data-image-idx", "#{idx}")
+        $(p).parents("a").click ()-> 
+            curCollectionName = $(this).find("img").attr("rc-box-collection")
+            showPhotoByIdx($(this).find("img").attr("data-image-idx"))
+            console.log "#{curCollectionName}"
+            
+        box_phs += "<img rc-box-collection = \"#{colName}\" data-image-idx = \"#{idx}\" data-interchange = \"#{$(p).attr("rc-box-phs")}\">"
+    return box_phs
+
 r = ()-> 
     bPhotos = document.getElementsByClassName("kra-ph-box")
     if bPhotos.length > 0
-        box_phs = ""
-        idx = 0
-        for p in bPhotos
-            idx++
-            $(p).parents("a").attr("data-open", viewerElementId)
-            $(p).attr("data-image-idx", "#{idx}")                                
-            box_phs += "<img data-image-idx = \"#{idx}\" data-interchange = \"#{$(p).attr("data-box-phs")}\">"  
-            $(p).parents("a").click ()-> showPhotoByIdx($(this).find("img").attr("data-image-idx"))
-        $("body").append("<div class=\"reveal\" id=\"#{viewerElementId}\" data-reveal data-v-offset = \"10%\"><div id = \"#{counterId}\"></div> <div id = \"ph-container\"><div id = \"#{prevArrId}\" class = \"arrows\"><span>&#12296;</span></div><div data-close id = \"#{middleImgEscId}\"></div><div id = \"#{nextArrId}\" class = \"arrows\"><span>&#12297;</span></div>#{box_phs}</div><button style = \"position: absolute;\" class=\"close-button\" data-close type=\"button\"><span aria-hidden=\"true\">&times;</span></button></div>")
+        phs_html = initBoxPhotos(bPhotos)
+        $("body").append("<div class=\"reveal\" id=\"#{viewerElementId}\" data-reveal data-v-offset = \"10%\"><div id = \"#{counterId}\"></div> <div id = \"ph-container\"><div id = \"#{prevArrId}\" class = \"arrows\"><span>&#12296;</span></div><div data-close id = \"#{middleImgEscId}\"></div><div id = \"#{nextArrId}\" class = \"arrows\"><span>&#12297;</span></div>#{phs_html}</div><button style = \"position: absolute;\" class=\"close-button\" data-close type=\"button\"><span aria-hidden=\"true\">&times;</span></button></div>")
         viewer = $("##{viewerElementId}")
         viewer.find(".arrows").click ()-> changePhoto(this.id) 
+        
         viewer.keydown (event)->
             if not enableViewerKeys then return
             enableViewerKeys = false 
@@ -81,7 +111,6 @@ r = ()->
                 showPhotoByIdx(curIdx)
                 #return
             console.log "#{curIdx}"
-        showPhotoByIdx(1)
                                            
         #elem = new Foundation.Reveal($("#photo-viewer"), {});
 
