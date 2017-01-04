@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+@import "realcraft";
 //контейнер в котором содержатся фотографии в модальной форме
 
 div#photo-viewer
@@ -11,6 +11,14 @@ div#photo-viewer
     {
         position: relative;
         width: 100%;
+        margin-top: 2rem;
+        max-width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+        img
+        {
+           // position: relative;
+        }
         //стрелки
         .arrows
         {
@@ -19,6 +27,16 @@ div#photo-viewer
             height: 100%;
             //background-color: white;
             cursor: pointer;
+            @include my_opacity(0.3);
+            
+            span
+            {
+                color: white;
+                font-size: 4rem;
+                position: relative;
+                top: 42%;
+                
+            }
         }
         #prev_ph
         {
@@ -30,6 +48,13 @@ div#photo-viewer
         {
             right: 0px;
             text-align: right;
+        }
+    }
+    #ph-container:hover
+    {
+        .arrows
+        {
+            @include my_opacity(0.9);
         }
     } 
 }
