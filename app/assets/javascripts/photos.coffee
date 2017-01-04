@@ -11,7 +11,7 @@ viewer = null
 
 updViewerCounterText = (idx, count)->
     if count > 1
-        h = if isRuLocale then {"photo": "фото", "fr": "из"} else {"photo": "photo", "fr": "from"}
+        h = if isRuLocale then {"photo": "фото", "fr": "из"} else {"photo": "photo", "fr": "of"}
         txt = "#{h.photo} <span class = \"rc-bold\">#{idx}</span> #{h.fr} <span class = \"rc-bold\">#{count}</span>"
     else 
         txt = ""
