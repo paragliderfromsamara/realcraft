@@ -7,6 +7,7 @@ viewerElementId = "photo-viewer"
 nextArrId = "next_ph"
 prevArrId = "prev_ph"
 counterId = "ph_counter"
+middleImgEscId = "close_reveral"
 viewer = null
 enableViewerKeys = true #когда происходит переход на другое фото, флаг ставится в false, как только произошел переход флаг возвращается в состояние true
 
@@ -64,7 +65,7 @@ r = ()->
             $(p).attr("data-image-idx", "#{idx}")                                
             box_phs += "<img data-image-idx = \"#{idx}\" data-interchange = \"#{$(p).attr("data-box-phs")}\">"  
             $(p).parents("a").click ()-> showPhotoByIdx($(this).find("img").attr("data-image-idx"))
-        $("body").append("<div class=\"reveal\" id=\"#{viewerElementId}\" data-reveal data-v-offset = \"10%\"><div id = \"#{counterId}\"></div> <div id = \"ph-container\"><div id = \"#{prevArrId}\" class = \"arrows\"><span>&#12296;</span></div><div id = \"#{nextArrId}\" class = \"arrows\"><span>&#12297;</span></div>#{box_phs}</div><button style = \"position: absolute;\" class=\"close-button\" data-close type=\"button\"><span aria-hidden=\"true\">&times;</span></button></div>")
+        $("body").append("<div class=\"reveal\" id=\"#{viewerElementId}\" data-reveal data-v-offset = \"10%\"><div id = \"#{counterId}\"></div> <div id = \"ph-container\"><div id = \"#{prevArrId}\" class = \"arrows\"><span>&#12296;</span></div><div data-close id = \"#{middleImgEscId}\"></div><div id = \"#{nextArrId}\" class = \"arrows\"><span>&#12297;</span></div>#{box_phs}</div><button style = \"position: absolute;\" class=\"close-button\" data-close type=\"button\"><span aria-hidden=\"true\">&times;</span></button></div>")
         viewer = $("##{viewerElementId}")
         viewer.find(".arrows").click ()-> changePhoto(this.id) 
         viewer.keydown (event)->
