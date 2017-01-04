@@ -8,6 +8,7 @@ nextArrId = "next_ph"
 prevArrId = "prev_ph"
 counterId = "ph_counter"
 viewer = null
+enableViewerKeys = true #когда происходит переход на другое фото, флаг ставится в false, как только произошел переход флаг возвращается в состояние true
 
 updViewerCounterText = (idx, count)->
     if count > 1
@@ -25,7 +26,7 @@ showPhotoByIdx = (idx)->
     phsCount = viewer.find("img[data-image-idx]").length
     if idx < 1
         idx = 1
-    else if idx > phsCount || idx is NaN
+    else if idx > phsCount
         idx = phsCount
     togglleArrow(prevArrId, (idx>1))
     togglleArrow(nextArrId, (idx<phsCount))
@@ -36,6 +37,7 @@ showPhotoByIdx = (idx)->
                                                             $(this).attr("is-cur-img", "false")
                                                             viewer.find("img[data-image-idx=#{idx}]").fadeIn(300, ()-> 
                                                                                                                         $(this).attr("is-cur-img", "true")
+                                                                                                                        enableViewerKeys = true
                                                                                                             )
     )
     #console.log "#{idx} -- #{phsCount}"
@@ -62,17 +64,22 @@ r = ()->
             $(p).attr("data-image-idx", "#{idx}")                                
             box_phs += "<img data-image-idx = \"#{idx}\" data-interchange = \"#{$(p).attr("data-box-phs")}\">"  
             $(p).parents("a").click ()-> showPhotoByIdx($(this).find("img").attr("data-image-idx"))
-        $("body").append("<div class=\"reveal\" id=\"#{viewerElementId}\" data-reveal data-v-offset = \"10%\"><div id = \"#{counterId}\"></div> <div id = \"ph-container\"><div id = \"#{prevArrId}\" class = \"arrows\"><span>&#12296;</span></div><div id = \"#{nextArrId}\" class = \"arrows\"><span>&#12297;</span></div>#{box_phs}</div><button class=\"close-button\" data-close type=\"button\"><span aria-hidden=\"true\">&times;</span></button></div>")
+        $("body").append("<div class=\"reveal\" id=\"#{viewerElementId}\" data-reveal data-v-offset = \"10%\"><div id = \"#{counterId}\"></div> <div id = \"ph-container\"><div id = \"#{prevArrId}\" class = \"arrows\"><span>&#12296;</span></div><div id = \"#{nextArrId}\" class = \"arrows\"><span>&#12297;</span></div>#{box_phs}</div><button style = \"position: absolute;\" class=\"close-button\" data-close type=\"button\"><span aria-hidden=\"true\">&times;</span></button></div>")
         viewer = $("##{viewerElementId}")
         viewer.find(".arrows").click ()-> changePhoto(this.id) 
         viewer.keydown (event)->
-            if event.keyCode is 37 
-                changePhoto(prevArrId)
-                return
+            if not enableViewerKeys then return
+            enableViewerKeys = false 
+            curIdx = getCurIdx()
+            if event.keyCode is 37
+                curIdx--
+                showPhotoByIdx(curIdx)
+                #return
             if event.keyCode is 39
-                changePhoto(nextArrId)
-                return
-            console.log "#{event.keyCode}"
+                curIdx++
+                showPhotoByIdx(curIdx)
+                #return
+            console.log "#{curIdx}"
         showPhotoByIdx(1)
                                            
         #elem = new Foundation.Reveal($("#photo-viewer"), {});

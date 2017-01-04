@@ -7,18 +7,28 @@
 
 div#photo-viewer
 {
+    #ph_counter
+    {
+        position: absolute;
+        z-index: 9999;
+        color: $white;
+        left: 10px;
+        top: 10px;
+        @include my_opacity(0.8);
+    }
     #ph-container
     {
         position: relative;
         width: 100%;
-        margin-top: 2rem;
-        max-width: 95%;
+        //margin-top: 2rem;
+        max-width: 100%;
         margin-right: auto;
         margin-left: auto;
         img
         {
            // position: relative;
         }
+
         //стрелки
         .arrows
         {
