@@ -22,15 +22,19 @@ div#photo-viewer
         width: 90%;
         height: auto; 
     }
-    #ph_counter
+    #viewer-info
     {
         position: absolute;
         z-index: 9999;
-        color: $white;
+        color: $black;
         left: 10px;
         top: 10px;
         font-size: 0.85rem;
         @include my_opacity(0.8);
+        #rc-box-title
+        {
+            padding-left: 20px;
+        }
     }
     #ph-container
     {
@@ -77,7 +81,7 @@ div#photo-viewer
                 {
                     font-size: 4.0rem;
                 }
-                color: white;
+                color: $medium-gray;
                 position: relative;
                 top: 45%;
                 

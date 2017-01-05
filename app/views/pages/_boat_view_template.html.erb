@@ -144,7 +144,9 @@
         </div>
     </div>
     <% if !@boat[:modifications].blank?  %>
+        <%mCounter = 0%>
        <% @boat[:modifications].each do |m| %>
+       <%mCounter += 1%>
                   <hr/>   
        <div class = "rc-modification-box tb-pad-s">
            <div class="row">
@@ -166,7 +168,7 @@
                    <div class = "small-12 medium-6 large-4 columns">
                        
                        <div style = "position: relative;"><div style = "position: absolute; top: 10px; right: 10px; z-index:200;"><h7><%= i[:title] %></h7></div></div>
-                       <%= image_tag i[:url] %>
+                       <a><%= image_tag i[:url], class: "kra-ph-box", "rc-box-phs".to_sym => "[#{i[:url]}, small]", "rc-box-collection".to_sym => "boat-views-#{mCounter}", "rc-box-title".to_sym => "#{@boat[:name]} #{m[:name]}: #{i[:title]}"  %></a>
                    </div>
                <%end%>
            </div>
@@ -186,7 +188,8 @@
                    <%j+=1%>
                    <div class = "small-12 medium-6 large-5 columns">
                        <h7><%= t(:scheme) %> <%= j.to_s %></h7>
-                       <%= image_tag i %>
+                       <a><%= image_tag i, class: "kra-ph-box", "rc-box-phs".to_sym => "[#{i}, small]", "rc-box-collection".to_sym => "accomodation-schema-#{mCounter}", "rc-box-title".to_sym => "#{@boat[:name]} #{m[:name]}: #{t(:crew_accomodation)} #{t(:scheme)} #{j}"%>
+                       </a>
                    </div>
                <%end%>
            </div>
@@ -212,8 +215,7 @@
                 </p>
             </div>
             <div class = "small-12 medium-7 columns tb-pad-s">
-                <img src = "<%= @boat[:engeneering_img] %>">
-            
+                <a><%= image_tag @boat[:engeneering_img], class: "kra-ph-box"  %></a>            
             </div>
         </div>
     </div>
