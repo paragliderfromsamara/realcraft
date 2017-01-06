@@ -28,6 +28,19 @@ module ApplicationHelper
     ]
   end
   
+  def rcParamsHash(title, unit, value, notice="")
+    {title: title, unit: unit, value: value, notice: notice}
+  end
+  
+  def searchRCParamValByTitle(title)
+    return 0 if @boat.nil?
+    return 0 if @boat[:boat_parameters].blank?
+    @boat[:boat_parameters].each {|p| return p if p[:title] == title}
+    return 0 
+  end
+  
+  
+    
   def real_craft_190
     boat_folder = "/boat_pages/rc190"
     @ru_head_desc = "Realсraft 190 позволит Вам ощутить всё разнообразие отдыха на воде. "
@@ -59,16 +72,29 @@ fishermen."
       slogan_ru: @ru_slogan, 
       slogan_en: @en_slogan, 
       header_description_ru: @ru_head_desc, 
-      header_description_en: @en_head_desc, 
-      crew_limit: "5#{t :pers_short}",
-      length_of_hull: "5.1#{t :m_short}",
-      beam_of_hull: "1.76#{t :m_short}",
-      max_permitted_load: "500#{t :kg_short}",
-      freeboard_thickness: "2#{t :mm_short}",
-      hull_thickness: "4#{t :mm_short}",
-      max_motor_pwr: "50#{t :hp_short}",
-      bot_deadrise_angle: "11˚",
-      empty_craft_mass: "347-389#{t :kg_short}",
+      header_description_en: @en_head_desc,
+      main_params_big: [0,4,5],
+      main_params_small: [1,2,3,14,9,10],
+      boat_parameters: [
+                          rcParamsHash(t(:crew_limit), t(:pers_short), 5),                     #0
+                          rcParamsHash(t(:max_permitted_load), t(:kg_short), 500),             #1
+                          rcParamsHash(t(:hull_thickness), t(:mm_short), 4),                   #2
+                          rcParamsHash(t(:freeboard_thickness), t(:mm_short), 2),              #3
+                          rcParamsHash(t(:length_of_hull), t(:m_short), 5.1),                  #4
+                          rcParamsHash(t(:beam_of_hull), t(:m_short), 1.76),                   #5
+                          rcParamsHash(t(:max_length), t(:m_short), 5.1),                      #6
+                          rcParamsHash(t(:max_beam), t(:m_short), 1.76),                       #7
+                          rcParamsHash(t(:transom_beam), t(:m_short), 1.66),                   #8
+                          rcParamsHash(t(:bot_deadrise_angle), "˚", 11),                       #9
+                          rcParamsHash(t(:empty_craft_mass), t(:kg_short), [347, 389]),        #10
+                          rcParamsHash(t(:light_craft_mass), t(:kg_short), [554, 596], t(:light_craft_mass_desc)),        #11
+                          rcParamsHash(t(:maximum_load_craft_mass), t(:kg_short), [1054, 1096], t(:maximum_load_craft_mass_desc)),  #12
+                          rcParamsHash(t(:weight_on_trailer), t(:kg_short), [573, 615]),          #13
+                          rcParamsHash(t(:max_eng_power), t(:hp_short), 50),                      #14
+                          rcParamsHash(t(:max_eng_mass), t(:kg_short), 162),                      #15
+                          rcParamsHash(t(:length_of_st_cable), t(:ft_short), 14),                 #16
+                          rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 12),                 #17
+                       ], 
       photos: make_photos_links([1,2,3,4], boat_folder),
       videos: [
         "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/fxN92HTzx4U\" frameborder=\"0\" allowfullscreen></iframe>"
@@ -96,6 +122,8 @@ fishermen."
     }
   end
   
+  
+  
   def real_craft_200
     boat_folder = "/boat_pages/rc200"
     @ru_head_desc = "Realсraft 200 это лодка с передним размещением консолей."
@@ -119,15 +147,28 @@ of large loads to the summer house on the islands or just cruises with a good co
       slogan_en: @en_slogan, 
       header_description_ru: @ru_head_desc, 
       header_description_en: @en_head_desc, 
-      crew_limit: "5#{t :pers_short}",
-      length_of_hull: "5.1#{t :m_short}",
-      beam_of_hull: "1.9#{t :m_short}",
-      max_permitted_load: "500#{t :kg_short}",
-      freeboard_thickness: "2#{t :mm_short}",
-      hull_thickness: "4#{t :mm_short}",
-      max_motor_pwr: "50#{t :hp_short}",
-      bot_deadrise_angle: "13˚",
-      empty_craft_mass: "370-390#{t :kg_short}",
+      main_params_big: [0,4,5],
+      main_params_small: [1,2,3,14,9,10],
+      boat_parameters: [
+        rcParamsHash(t(:crew_limit), t(:pers_short), 5),                     #0
+        rcParamsHash(t(:max_permitted_load), t(:kg_short), 500),             #1
+        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 2),              #2
+        rcParamsHash(t(:hull_thickness), t(:mm_short), 4),                   #3
+        rcParamsHash(t(:length_of_hull), t(:m_short), 5.1),                  #4
+        rcParamsHash(t(:beam_of_hull), t(:m_short), 1.9),                    #5
+        rcParamsHash(t(:max_length), t(:m_short), 5.1),                      #6
+        rcParamsHash(t(:max_beam), t(:m_short), 1.9),                        #7
+        rcParamsHash(t(:transom_beam), t(:m_short), 1.72),                   #8
+        rcParamsHash(t(:bot_deadrise_angle), "˚", 13),                       #9
+        rcParamsHash(t(:empty_craft_mass), t(:kg_short), [378, 390]),        #10
+        rcParamsHash(t(:light_craft_mass), t(:kg_short), [585, 597], t(:light_craft_mass_desc)),        #11
+        rcParamsHash(t(:maximum_load_craft_mass), t(:kg_short), [1085, 1097], t(:maximum_load_craft_mass_desc)),  #12
+        rcParamsHash(t(:weight_on_trailer), t(:kg_short), [604, 616]),          #13
+        rcParamsHash(t(:max_eng_power), t(:hp_short), 50),                      #14
+        rcParamsHash(t(:max_eng_mass), t(:kg_short), 162),                      #15
+        rcParamsHash(t(:length_of_st_cable), t(:ft_short), 11),                 #16
+        rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 9)                   #17
+                       ], 
       photos: make_photos_links([1,2,3,4], boat_folder),
       videos: [
         "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/J0JQXQbo01M\" frameborder=\"0\" allowfullscreen></iframe>"

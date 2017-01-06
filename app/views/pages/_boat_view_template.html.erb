@@ -44,83 +44,35 @@
             </div>
         </div>
         <div class = "row row tb-pad-s">
-            <div class = "small-4 columns">
-                <p class = "rc-param-name-b text-center">
-                    <%= t(:crew_limit) %>
-                </p>
-                <div class="stat text-center rc-param-val-b">
-                    <%= @boat[:crew_limit] %>
-                </div>
-            </div>
-            <div class = "small-4 columns">
-                <p class = "rc-param-name-b text-center">
-                    <%= t(:length_of_hull) %>
-                </p>
-                <div class="stat text-center rc-param-val-b">
-                    <%= @boat[:length_of_hull] %>
-                </div>
-            </div>
-            <div class = "small-4 columns">
-                <p class = "rc-param-name-b text-center">
-                    <%= t(:beam_of_hull) %>
-                </p>
-                <div class="stat text-center rc-param-val-b">
-                    <%= @boat[:beam_of_hull] %>
-                </div>
-            </div>
+            <% if !@boat[:main_params_big].blank?%>
+                <% @boat[:main_params_big].each do |i|%>
+                    <div class = "small-4 columns">
+                        <p class = "rc-param-name-b text-center">
+                            <%= @boat[:boat_parameters][i][:title] %>
+                        </p>
+                        <div class="stat text-center rc-param-val-b">
+                            <%= @boat[:boat_parameters][i][:value] %><%= @boat[:boat_parameters][i][:unit] %>
+                        </div>
+                    </div>
+                <%end %>
+            <%end %>
         </div>
         <div class = "row">
-            <div class = "small-6 medium-4 large-2 columns tb-pad-s">
-                <p class = "rc-param-name-s text-center">
-                    <%= t(:max_permitted_load) %>
-                </p>
-                <div class="stat text-center rc-param-val-s">
-                    <%= @boat[:max_permitted_load] %>
-                </div>
-            </div>
-            <div class = "small-6 medium-4 large-2 columns tb-pad-s">
-                <p class = "rc-param-name-s text-center">
-                    <%= t(:hull_thickness) %>
-                </p>
-                <div class="stat text-center rc-param-val-s">
-                    <%= @boat[:hull_thickness] %>
-                </div>
-            </div>
-            <div class = "small-6 medium-4 large-2 columns tb-pad-s">
-                <p class = "rc-param-name-s text-center">
-                    <%= t(:freeboard_thickness) %>
-                </p>
-                <div class="stat text-center rc-param-val-s">
-                    <%= @boat[:freeboard_thickness] %>
-                </div>
-            </div>
-            <div class = "small-6 medium-4 large-2 columns tb-pad-s">
-                <p class = "rc-param-name-s text-center">
-                    <%= t(:max_power) %>
-                </p>
-                <div class="stat text-center rc-param-val-s">
-                    <%= @boat[:max_motor_pwr] %>
-                </div>
-            </div>
-            <div class = "small-6 medium-4 large-2 columns tb-pad-s">
-                <p class = "rc-param-name-s text-center">
-                    <%= t(:bot_deadrise_angle) %>
-                </p>
-                <div class="stat text-center rc-param-val-s">
-                    <%= @boat[:bot_deadrise_angle] %>
-                </div>
-            </div>
-            <div class = "small-6 medium-4 large-2 columns tb-pad-s">
-                <p class = "rc-param-name-s text-center">
-                    <%= t(:empty_craft_mass) %>
-                </p>
-                <div class="stat text-center rc-param-val-s">
-                    <%= @boat[:empty_craft_mass] %>
-                </div>
-            </div>
+            <% if !@boat[:main_params_small].blank?%>
+                <% @boat[:main_params_small].each do |i|%>
+                    <div class = "small-6 medium-4 large-2 columns tb-pad-s">
+                        <p class = "rc-param-name-s text-center">
+                            <%= @boat[:boat_parameters][i][:title] %>
+                        </p>
+                        <div class="stat text-center rc-param-val-s">
+                            <%v = @boat[:boat_parameters][i][:value]%>
+                            <%= v.class.name == "Array" ? "#{v.sort.first}-#{v.sort.last}" : v %><%= @boat[:boat_parameters][i][:unit] %>
+                        </div>
+                    </div>
+                <%end %>
+            <%end %>
         </div>
     </div>
-
 </div>
 
 <ul id = "rc-data-tabs" class="tabs" data-tabs data-deep-link="true" data-turbolinks="false" >
@@ -181,7 +133,7 @@
            </div>
            <div class = "row tb-pad-s">
                <div class = "medium-12 large-2 columns">
-                   <%=  t(:crew_accomodation_txt, modification: "<b>#{m[:name]}</b>", crew_limit: @boat[:crew_limit].to_i.to_s).html_safe  %>
+                   <%=  t(:crew_accomodation_txt, modification: "<b>#{m[:name]}</b>", crew_limit: searchRCParamValByTitle(t(:crew_limit))[:value].to_i.to_s).html_safe  %>
                </div>
                <% j=0 %>
                <% m[:acc_views_imgs].each do |i|%>
@@ -218,6 +170,7 @@
                 <a><%= image_tag @boat[:engeneering_img], class: "kra-ph-box"  %></a>            
             </div>
         </div>
+        <%= render "boat_params_table" %>
     </div>
   </div>
   <div class="tabs-panel" id="photos">

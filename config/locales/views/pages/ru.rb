@@ -33,7 +33,9 @@
       crew_accomodation_txt: "В модификации %{modification} %{crew_limit} человек могут быть размещены согласно следующим схемам.",
       top_view: "Вид сверху",
       bow_view: "Вид с носа",
-      aft_view: "Вид с кормы"
-      
+      aft_view: "Вид с кормы",
+      unit: "Ед. изм.",
+      parameter_name: "Параметр",
+      parameters_table: "Технические характеристики"
     }
 }

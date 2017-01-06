@@ -28,24 +28,40 @@ ru:
   contacts: "КОНТАКТЫ"
   m_short: "м"
   mm_short: "мм"
+  ft_short: "фт"
   kg_short: "кг"
   hp_short: "лc"
   pers_short: "ч"
   pers_full: "чeловек"
   scheme: "Схема"
+  more: "подробнее..."
 
   
   #boat_parameters names
   crew_limit: "пассажировместимость"
   length_of_hull: "длина корпуса"
   beam_of_hull: "ширина корпуса"
+  max_length: "максимальная длина"
+  max_beam: "максимальная ширина"
+  transom_beam: "ширина кормы"
   max_permitted_load: "грузоподъемность"
   hull_thickness: "толщина днища"
   freeboard_thickness: "толщина борта"
-  max_power: "макс. мощность ПМ"
+  max_eng_power: "макс. мощность ПМ"
+  max_eng_mass: "макс. масса ПМ"
   bot_deadrise_angle: "килеватость"
   empty_craft_mass: "масса пустого судна"
+  light_craft_mass: "масса снаряженного судна"
+  maximum_load_craft_mass: "масса судна с максимальной нагрузкой"
+  weight_on_trailer: "масса на трейлере"
+  length_of_st_cable: "длина рулевого троса"
+  length_of_rc_cable: "длина кабелей управления"
   #boat_parameters names end
+  
+  #boat_parameters description
+  light_craft_mass_desc: "С установленным двигателем, аккумулятором и массой дополнительного снаряжения согласно стандарту ISO 12217-3:2015"
+  maximum_load_craft_mass_desc: "Масса пустой лодки + масса наибольшего мотора + АКБ + минимально необходимое оборудование + топливо в баках."
+  #end
   
   #messages
   no_videos_msg: "Не было добавлено ни одного видео."

@@ -28,23 +28,39 @@ en:
   contacts: "CONTACTS"
   m_short: "m"
   mm_short: "mm"
+  ft_short: "ft"
   kg_short: "kg"
   hp_short: "hp"
   pers_short: "p"
   pers_full: "persons"
   scheme: "Scheme"
+  more: "more"
   
   #boat_parameters names
   crew_limit: "Crew limit"
   length_of_hull: "Length of hull"
   beam_of_hull: "Beam of hull"
+  max_length: "Maximum length"
+  max_beam: "Maximum beam"
+  transom_beam: "Transom beam"
   max_permitted_load: "Max. permitted load"
   hull_thickness: "Hull Thickness"
   freeboard_thickness: "Freeboard Thickness"
-  max_power: "Maximum power"
+  max_eng_power: "Maximum engine power"
+  max_eng_mass: "Maximum engine mass"
   bot_deadrise_angle: "Bottom deadrise angle"
   empty_craft_mass: "Empty craft mass"
+  light_craft_mass: "Light craft mass"
+  maximum_load_craft_mass: "Maximum load craft mass"
+  weight_on_trailer: "Weight on trailer"
+  length_of_st_cable: "Length of steering cable"
+  length_of_rc_cable: "Length of remote control cable"
   #boat_parameters names end
+
+  #boat_parameters description
+  light_craft_mass_desc: "With engine, battery and standard equipment mass according to ISO 12217-3:2015"
+  maximum_load_craft_mass_desc: "Empty craft condition mass + heaviest engine + battery + basic equipment + liquids in fixed tanks / detachable tanks."
+  #end
 
   #messages
   no_videos_msg: "No videos were added."
