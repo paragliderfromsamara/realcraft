@@ -28,10 +28,11 @@ var readyFunc = function()
     windowResizeFunc();
     
     $("#rc-data-tabs").on('change.zf.tabs', function() {
-        var tOffset = $("#rc-data-tabs").offset().top;
+        var tOffset = $("#rc-data-tabs").offset().top - 20;
         var curScroll = $(window).scrollTop();
-        window.location.href = $('[data-tabs]').find(".is-active a").attr("href");
-        $(window).scrollTop(tOffset-20);
+        history.pushState('', '', $('[data-tabs]').find(".is-active a").attr("href"));
+        $('html, body').stop(true, true).animate({ scrollTop: tOffset }, 1000);
+        return false;
     });
     
     if ($('[data-tabs]').length > 0 && requestHash.length>0)
