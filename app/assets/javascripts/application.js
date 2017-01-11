@@ -23,18 +23,23 @@ var readyFunc = function()
     //var elem = null;
     var elem, requestHash;
     $(document).foundation();
-    requestHash = getHashCodeFromRequest();
+    requestHash = window.location.hash;
    // elem = new Foundation.Tabs("#rc-data-tabs", {});
     windowResizeFunc();
     
     $("#rc-data-tabs").on('change.zf.tabs', function() {
-      window.location.href = $('[data-tabs]').find(".is-active a").attr("href");
+        var tOffset = $("#rc-data-tabs").offset().top;
+        var curScroll = $(window).scrollTop();
+        window.location.href = $('[data-tabs]').find(".is-active a").attr("href");
+        $(window).scrollTop(tOffset-20);
     });
     
     if ($('[data-tabs]').length > 0 && requestHash.length>0)
     {
         $("#rc-data-tabs").foundation('selectTab', $(requestHash));
+        
     }
+    
     //elem = new Foundation.DropdownMenu($("#dd-menu"));
     
 }
