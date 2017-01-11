@@ -31,7 +31,8 @@ var readyFunc = function()
         var tOffset = $("#rc-data-tabs").offset().top - 20;
         var curScroll = $(window).scrollTop();
         history.pushState('', '', $('[data-tabs]').find(".is-active a").attr("href"));
-        $('html, body').stop(true, true).animate({ scrollTop: tOffset }, 1000);
+        if (Math.abs(tOffset-curScroll) > 15) $('html, body').stop(true, true).animate({ scrollTop: tOffset }, 1000);
+        
         return false;
     });
     
