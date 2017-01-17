@@ -5,41 +5,23 @@
                          <img id = "slogan-img" src = "/files/main_slogan.png">
                      </div>
                   </div>
-
               </div>
             <ul class="orbit-container">
-                <!--
-              <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-              <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-                    -->
-              
               <%= slider_imgs(main_page_slider_imgs).html_safe  %>
-
             </ul>
           </div>    
 
 <div class = "row">
     <div class = "small-12 columns tb-pad-m">
-        <%= rc_header("PRODUCTION", "ABOUT") %>
+        <%= rc_header(t(:production), t(:about)) %>
     </div>
 </div>
 
 <div class = "row">
     <div class = "small-12 medium-5 columns tb-pad-s">
-        <p>We produce aluminum boats for over 10 years. 
-Our boats can be found in different parts of the world.</p>
-    </div>
-    <div class = "medium-1 columns hide-for-small">
-    </div>
-    <div class = "small-12 medium-6 columns tb-pad-s">
-        <img src = "/files/factory_1.png">
-    </div>
-</div>
-<div class = "row">
-    <div class = "small-12 medium-5 columns tb-pad-s">
         <img src = "/files/factory_2.png">
     </div>
-    <div class = "small-12 medium-4 medium-offset-1 columns tb-pad-s">
+    <div class = "small-12 medium-6 columns tb-pad-s end">
        <p >
            We produce our boats in the modern 
             factory buildings, specially built by us for 
@@ -56,16 +38,85 @@ Our boats can be found in different parts of the world.</p>
             machines, the assembly of the boat ona rigid 
             jig specifying the exact geometry of the body.
         </p>
+    </div>    
+</div>
+<div class = "blue-block">
+    <div class = "row">
+        <div class = "small-12 medium-6 columns tb-pad-s">
+            <p class = "stat text-center">
+                 15,000 <%= t :m_short %><span class = "degree">2</span>
+             </p>
+             <p class = "rc-param-name-b text-center">
+                 The area of own land for production
+             </p>
+        </div>
+        <div class = "small-12 medium-6 columns end tb-pad-s">
+            <p class = "stat text-center">
+                 3,800 <%= t :m_short %><span class = "degree">2</span>
+             </p>
+             <p class = "rc-param-name-b text-center">
+                 The area of own production and warehouse space
+             </p>
+        </div>    
     </div>
-    <div class = "medium-2 columns hide-for-small">
+</div>
+<div class = "row">
+    <div class = "small-12 columns tb-pad-m">
+        <%= rc_header(t(:today), "realcraft") %>
     </div>
-    
+</div>
+<div class = "row">
+    <div class = "small-12 medium-6 columns end">
+        <div class = "row">
+            <div class = "small-12 medium-4 columns">
+                 <p>Modern equipment of an industrial class</p>
+            </div>
+            <div class = "small-12 medium-8 columns">
+                 <img src = "/files/factory_2.png">
+            </div>
+        </div>
+        <div class = "row tb-pad-s">
+            <div class = "small-12 medium-12 columns">
+                <h3>Many years of large-scale production experience</h3>
+            </div>
+        </div>
+        <div class = "row tb-pad-s">
+            <div class = "small-12 medium-7 columns">
+                <img src = "/files/factory_2.png">
+            </div>
+            <div class = "small-12 medium-5 columns">
+                 <p>A large staff of top notch professionals</p>
+            </div>
+        </div>
+    </div>
+    <div class = "small-12 medium-6 columns end">
+        <div class = "row">
+            <div class = "small-12 medium-5 columns">
+                 <p>Advanced methods of engineering and quality control</p>
+            </div>
+            <div class = "small-12 medium-7 columns end">
+                 <img src = "/files/factory_2.png">
+            </div>
+        </div>
+        <div class = "row tb-pad-s">
+            <div class = "small-12  medium-6 columns">
+                <img src = "/files/factory_2.png">
+            </div>
+            <div class = "small-12 medium-6 columns">
+                 <p>Spacious, well- lit workshops especially equipped for crafting boats</p>
+                 <h3>Every detail is important</h3>
+            </div>
+
+
+        </div>
+        <div class = "row tb-pad-s">
+            <div class = "small-12 medium-6 columns">
+                <img src = "/files/factory_2.png">
+            </div>
+            <div class = "small-12 medium-6 columns">
+                 <p>Many hours of workshop testing for each new model</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!--
-
-              <li class="is-active orbit-slide">
-                  <img class="orbit-image" data-interchange="[/slider/index/2_small.jpg, small], [/slider/index/2_medium.jpg, medium], [/slider/index/2_large.jpg, large], [/slider/index/2_xlarge.jpg, xlarge]">
-              </li>
-
- -->

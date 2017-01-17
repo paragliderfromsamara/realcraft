@@ -168,5 +168,12 @@ div#rc-parameters
     }
 }
 
-
+.blue-block
+{
+    background-color: $rc-primary-dark-blue;
+    p, h1, h2, h3, h4 
+    {
+        color: $white;
+    }
+}
 

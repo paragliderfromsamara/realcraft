@@ -14,9 +14,9 @@ module ApplicationHelper
   
   def rc_header(big, small = nil, small_bot = nil)
     v = ""
-    v += "<h3>#{small}</h3>" if !small.nil? 
-    v += "<h1>#{big}</h1>"
-    v += "<h4>#{small_bot}</h4>" if !small_bot.nil? 
+    v += "<h3>#{small.mb_chars.upcase}</h3>" if !small.nil? 
+    v += "<h1>#{big.mb_chars.upcase}</h1>"
+    v += "<h4>#{small_bot.mb_chars.upcase}</h4>" if !small_bot.nil? 
     return "<div id = \"rc-header\">#{v}</div>".html_safe
   end
   
