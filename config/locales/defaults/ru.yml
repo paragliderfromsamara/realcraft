@@ -37,6 +37,14 @@ ru:
   pers_full: "чeловек"
   scheme: "Схема"
   more: "подробнее..."
+  who: "Кто?"
+  we_are: "мы это..."
+  production_and_warehouse_space: "производственных и складский помещений"
+  experience_of_shipbuilding: "опыт судостроения"
+  years: "лет"
+  land_for_production: "земли под производство"
+  own_land_for_production: "площадь собственной земли под производство"
+  own_production_and_warehouse_space: "площадь собственных производственных и складский помещений"
 
   
   #boat_parameters names

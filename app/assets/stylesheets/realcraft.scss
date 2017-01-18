@@ -57,7 +57,7 @@ $rc-blue: #489fdf;
     background-color: $rc-blue;
     p, h1, h2, h3, h4 
     {
-        color: $rc-primary-dark-blue;
+        color: $white;
     }
 }
 .dark-blue-bg
@@ -175,5 +175,47 @@ div#rc-parameters
     {
         color: $white;
     }
+}
+.light-blue-block
+{
+    background-color: #3b4559;
+    p, h1, h2, h3, h4, a 
+    {
+        color: $white;
+    }
+    a:hover
+    {
+        color: $light-gray;
+    }
+}
+
+.boat-index-block
+{
+    //background-image: url("/files/pattern_map_white.png");
+    //@extend .rc-map-pattern;
+    z-index: 10;
+    position: relative;
+    p, h1, h2, h3, h4, a 
+    {
+        color: $rc-primary-dark-blue;
+    }
+    .odd-wrapper, .even-wrapper {position: absolute; top: 0; left: 0; height: 100%; width: 100%;z-index: 11;}
+    .odd-wrapper
+    {
+        background-color: darken($white, 4%);;
+        //@include my_opacity(0.76);
+    }
+    .even-wrapper
+    {
+        background-color: darken($white, 7%);
+        
+       // @include my_opacity(0.76);
+    }
+    .content
+    {
+        position: relative;
+        z-index: 13;
+    }
+    
 }
 

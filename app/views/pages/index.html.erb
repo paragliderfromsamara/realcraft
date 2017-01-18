@@ -1,122 +1,109 @@
-          <div class="orbit" role="region" aria-label="RealCraft Motor Boats" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-              <div id = "slogan">
-                  <div class = 'row tb-pad-s' style = " position: relative;margin-left: auto; margin-right: auto;">
-                     <div class = "small-12 columns">
-                         <img id = "slogan-img" src = "/files/main_slogan.png">
-                     </div>
-                  </div>
-              </div>
-            <ul class="orbit-container">
-              <%= slider_imgs(main_page_slider_imgs).html_safe  %>
-            </ul>
-          </div>    
-
+<div class="orbit" role="region" aria-label="RealCraft Motor Boats" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+  <div id = "slogan">
+      <div class = 'row tb-pad-s' style = " position: relative;margin-left: auto; margin-right: auto;">
+         <div class = "small-12 columns">
+             <img id = "slogan-img" src = "/files/main_slogan.png">
+         </div>
+      </div>
+  </div>
+<ul class="orbit-container">
+  <%= slider_imgs(main_page_slider_imgs).html_safe  %>
+</ul>
+</div>    
+<!--boats list-->
 <div class = "row">
     <div class = "small-12 columns tb-pad-m">
-        <%= rc_header(t(:production), t(:about)) %>
+        <%= rc_header("Choose your realcraft today") %>
     </div>
 </div>
-
-<div class = "row">
-    <div class = "small-12 medium-5 columns tb-pad-s">
-        <a><%= image_tag production_photos("6")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("6")[:list], "rc-box-collection".to_sym => "production"  %></a>
-    </div>
-    <div class = "small-12 medium-6 columns tb-pad-s end">
-       <p >
-           We produce our boats in the modern 
-            factory buildings, specially built by us for 
-            these purposes. They are located in the 
-            nearest suburb of Samara city - one of the 
-            biggest cities on the great river Volga. 
-        </p>
-        <p>
-            At all stages of production using modern 
-            technologies and materials - from the design 
-            study and construction of 3D-CAD-model to 
-            the finish color in the professional coloring 
-            and drying chamber. Sawing is made on CNC 
-            machines, the assembly of the boat ona rigid 
-            jig specifying the exact geometry of the body.
-        </p>
-    </div>    
-</div>
-<div class = "blue-block">
-    <div class = "row">
-        <div class = "small-12 medium-6 columns tb-pad-s">
-            <p class = "stat text-center">
-                 15,000 <%= t :m_short %><span class = "degree">2</span>
-             </p>
-             <p class = "rc-param-name-b text-center">
-                 The area of own land for production
-             </p>
+<% if !hash_boats_list.blank?%>
+    <%j=0%>
+    <% hash_boats_list.each do |b|%>
+    <%j+=1%>
+    <div class = "boat-index-block tb-pad-s">
+        <div class = "<%= j.odd? ? "odd" : "even"  %>-wrapper"></div>
+        <div class = "content">
+            <div class = "row tb-pad-s">
+                <div class = "small-12 medium-4 columns">
+                    <%= rc_header(b[:name], t(:model), "#{t :design_category} #{b[:design_category]}") %>
+                </div>
+                <div class = "small-12 medium-8 columns">
+                    <% if !b[:main_params_big].blank?%>
+                        <div class = "row">
+                        <% b[:main_params_big].each do |i|%>
+                            <div class = "small-4 columns">
+                                <p class = "rc-param-name-b text-center">
+                                    <%= b[:boat_parameters][i][:title] %>
+                                </p>
+                                <div class="stat text-center rc-param-val-b">
+                                    <%= b[:boat_parameters][i][:value] %><%= b[:boat_parameters][i][:unit] %>
+                                </div>
+                            </div>
+                        <%end %>
+                        </div>
+                    <%end %>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "small-12 columns text-center">
+                    <p >
+                        <%= b["slogan_#{cur_locale}".to_sym] %>
+                    </p>
+                </div>
+            </div>
+            <div class = "row tb-pad-s">
+                <div class = "small-12 columns">
+                    <%= image_tag b[:slider_images].first, "data-interchange".to_sym => make_photos_interchange(b[:slider_images].first), style: "padding:0; margin:0;", vspace: "0" %>
+                </div>
+            </div>
         </div>
-        <div class = "small-12 medium-6 columns end tb-pad-s">
-            <p class = "stat text-center">
-                 3,800 <%= t :m_short %><span class = "degree">2</span>
-             </p>
-             <p class = "rc-param-name-b text-center">
-                 The area of own production and warehouse space
-             </p>
-        </div>    
+        
+        
     </div>
-</div>
-<div class = "row">
-    <div class = "small-12 columns tb-pad-m">
-        <%= rc_header(t(:today), "realcraft") %>
-    </div>
-</div>
-<div class = "row">
-    <div class = "small-12 medium-6 columns end">
+    <%end%>
+<%end%>
+<!--boats list end-->
+<div class = "light-blue-block">
+    <div class = "tb-pad-m">
+        <div class = "row">
+            <div class = "small-12 columns text-center">
+                <%= rc_header(t(:we_are), t(:who)) %>
+            </div>
+        </div>
         <div class = "row">
             <div class = "small-12 medium-4 columns">
-                 <p>Modern equipment of an industrial class</p>
+                <p class = "stat text-center">
+                     15,000 <%= t :m_short %><span class = "degree">2</span>
+                 </p>
+                 <p class = "rc-param-name-b text-center">
+                     <%= t :land_for_production %>
+                 </p>
+                 <a><%= image_tag production_photos("6")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("6")[:list], "rc-box-collection".to_sym => "production"  %></a>
             </div>
-            <div class = "small-12 medium-8 columns">
-                 <a><%= image_tag production_photos("2")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("2")[:list], "rc-box-collection".to_sym => "production"  %></a>
+            <div class = "small-12 medium-4 columns tb-pad-s">
+                    <a><%= image_tag production_photos("2")[:url], class: "kra-ph-box tb-pad-s", "rc-box-phs".to_sym => production_photos("2")[:list], "rc-box-collection".to_sym => "production"  %></a>
+                    <p class = "stat text-center">
+                         12 <%= t :years %>
+                     </p>
+                     <p class = "rc-param-name-b text-center">
+                         <%= t :experience_of_shipbuilding %>
+                     </p>
+                     <p class = "text-center">
+                         <%= link_to "#{t(:more).mb_chars.capitalize}...", about_path %>
+                     </p>
             </div>
-        </div>
-        <div class = "row tb-pad-s">
-            <div class = "small-12 medium-12 columns">
-                <h3>Many years of large-scale production experience</h3>
-            </div>
-        </div>
-        <div class = "row tb-pad-s">
-            <div class = "small-12 medium-7 columns">
-                <a><%= image_tag production_photos("3")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("3")[:list], "rc-box-collection".to_sym => "production"  %></a>
-            </div>
-            <div class = "small-12 medium-5 columns">
-                 <p>A large staff of top notch professionals</p>
-            </div>
-        </div>
-    </div>
-    <div class = "small-12 medium-6 columns end">
-        <div class = "row">
-            <div class = "small-12 medium-5 columns">
-                 <p>Advanced methods of engineering and quality control</p>
-            </div>
-            <div class = "small-12 medium-7 columns end">
-                 <a><%= image_tag production_photos("4")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("4")[:list], "rc-box-collection".to_sym => "production"  %></a>
-            </div>
-        </div>
-        <div class = "row tb-pad-s">
-            <div class = "small-12  medium-6 columns">
-                <a><%= image_tag production_photos("1")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("1")[:list], "rc-box-collection".to_sym => "production"  %></a>
-            </div>
-            <div class = "small-12 medium-6 columns">
-                 <p>Spacious, well- lit workshops especially equipped for crafting boats</p>
-                 <h3>Every detail is important</h3>
-            </div>
-
-
-        </div>
-        <div class = "row tb-pad-s">
-            <div class = "small-12 medium-6 columns">
-                 <p>Many hours of workshop testing for each new model</p>
-            </div>
-            <div class = "small-12 medium-6 columns">
-                <a><%= image_tag production_photos("5")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("5")[:list], "rc-box-collection".to_sym => "production"  %></a>
-            </div>
+            <div class = "small-12 medium-4 columns">
+                <p class = "stat text-center">
+                     3,800 <%= t :m_short %><span class = "degree">2</span>
+                 </p>
+                 <p class = "rc-param-name-b text-center">
+                     <%= t :production_and_warehouse_space %>
+                 </p>
+                 <a><%= image_tag production_photos("1")[:url], class: "kra-ph-box", "rc-box-phs".to_sym => production_photos("1")[:list], "rc-box-collection".to_sym => "production"  %></a>
+            </div>    
         </div>
     </div>
+
 </div>
+
 

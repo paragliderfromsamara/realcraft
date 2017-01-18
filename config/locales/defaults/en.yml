@@ -37,6 +37,14 @@ en:
   pers_full: "persons"
   scheme: "Scheme"
   more: "more"
+  who: "Who?"
+  we_are: "we are..."
+  production_and_warehouse_space: "production and warehouse space"
+  experience_of_shipbuilding: "experience of shipbuilding"
+  years: "years"
+  land_for_production: "land for production"
+  own_land_for_production: "The area of own land for production"
+  own_production_and_warehouse_space: "The area of own production and warehouse space"
   
   #boat_parameters names
   crew_limit: "Crew limit"

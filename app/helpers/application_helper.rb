@@ -1,7 +1,10 @@
 module ApplicationHelper
+  def make_photos_interchange(url, size = "small")
+    "[#{url.gsub(size, "small")}, small], [#{url.gsub(size, "medium")}, medium], [#{url.gsub(size, "large")}, large], [#{url.gsub(size, "xlarge")}, xlarge]"
+  end
   def main_page_slider_imgs #изображения слайдера с главной страницы
     [
-      "/slider/rc200/3_slider_small.jpg",
+      "/slider/rc200/4_slider_small.jpg",
       "/slider/index/1_small.jpg",
       "/slider/index/4_small.jpg"
     ]
@@ -39,7 +42,9 @@ module ApplicationHelper
     return 0 
   end
   
-  
+  def hash_boats_list
+    [real_craft_190, real_craft_200]
+  end
     
   def real_craft_190
     boat_folder = "/boat_pages/rc190"
