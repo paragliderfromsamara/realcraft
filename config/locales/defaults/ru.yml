@@ -25,7 +25,7 @@ ru:
   default_meta_tags: "моторные лодки, лодки"
   default_meta_description: "Производство современных алюминиевых моторных лодок"
   about: "О НАС"
-  contacts: "Контактные данные"
+  contacts: "Контакты"
   production: "Производство"
   today: "Сегодня"
   m_short: "м"
@@ -45,7 +45,7 @@ ru:
   land_for_production: "земли под производство"
   own_land_for_production: "площадь собственной земли под производство"
   own_production_and_warehouse_space: "площадь собственных производственных и складский помещений"
-
+  opposite_locale_name: "ENG"
   
   #boat_parameters names
   crew_limit: "пассажировместимость"

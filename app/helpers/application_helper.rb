@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+  
   def make_photos_interchange(url, size = "small")
     "[#{url.gsub(size, "small")}, small], [#{url.gsub(size, "medium")}, medium], [#{url.gsub(size, "large")}, large], [#{url.gsub(size, "xlarge")}, xlarge]"
   end

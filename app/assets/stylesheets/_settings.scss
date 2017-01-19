@@ -47,6 +47,21 @@ $topbar-title-spacing: 0;
 $dropdownmenu-arrow-color: $white;
 $topbar-padding: 1.3rem; 
 $hr-width: 100%;
+a.locale-link
+{
+    text-decoration: underline;
+}
+.title-bar
+{
+    #locale-link
+    {
+        padding-top: 0.46rem;
+    }
+    a{
+        color: $white; font-family: $bold-fonts;
+        &:hover {color:  darken($white, 13%)}
+    }
+}
 .top-bar 
 {
     @include breakpoint(small) 

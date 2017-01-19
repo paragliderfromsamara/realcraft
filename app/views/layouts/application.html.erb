@@ -10,17 +10,26 @@
   </head>
   <body>
       <div id = "header">
-          <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">
-                <div class="top-bar-left">
-                <ul class = 'menu'>
-                    <li>
-                        <%= link_to image_tag("/files/white_logo.png", style: "height: 30px;").html_safe, root_path %>
-                    </li>
-                </ul>
-                </div>
-            </div>
+          <div class="title-bar row" data-responsive-toggle="main-menu" data-hide-for="medium">
+              <div class = "small-8 columns">
+                  <button class="menu-icon" type="button" data-toggle></button>
+                  <div class="title-bar-title">
+                      <div class="top-bar-left">
+                          <ul class = 'menu'>
+                              <li>
+                                  <%= link_to image_tag("/files/white_logo.png", style: "height: 30px;").html_safe, root_path %>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class = "small-4 columns">
+                  <div class="top-bar-right">
+                      <ul class = 'menu'>
+                          <li  id = "locale-link"><%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link"%></li>
+                      </ul>
+                  </div>
+               </div>
           </div>
           <div class="top-bar" id = "main-menu" data-animate="hinge-in-from-top spin-out">
                 <div class = "row float-center">
@@ -29,9 +38,10 @@
                         <%= link_to image_tag("/files/white_logo.png", style: "max-height: 35px;").html_safe, root_path %>
                     </li>
                     <li class = "small-3 medium-2 column top-bar-links text-center"><%= link_to t(:about), about_path %></li>
-                    <li class = "small-3 medium-3 column top-bar-links text-center"><%= link_to "RealCraft 190", realcraft_190_path %></li>
-                    <li class = "small-3 medium-3 column top-bar-links text-center"><%= link_to "RealCraft 200", realcraft_200_path %></li>
+                    <li class = "small-3 medium-2 column top-bar-links text-center"><%= link_to "RealCraft 190", realcraft_190_path %></li>
+                    <li class = "small-3 medium-2 column top-bar-links text-center"><%= link_to "RealCraft 200", realcraft_200_path %></li>
                     <li class = "small-3 medium-2 column top-bar-links text-center"><%= link_to t(:contacts), contacts_path %></li>
+                    <li class = "medium-2 column top-bar-links text-right hide-for-small-only"><%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link" %></li>
                   </ul>
                 </div>
           </div>

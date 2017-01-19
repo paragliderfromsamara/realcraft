@@ -1,5 +1,10 @@
 module ServiceFunctionsHelper
-	def is_dev? #проверка на режим разработки
+  def opposite_locale_url
+    v = cur_locale == :ru ? [".ru", ".com"] : [".com", ".ru"]
+    return request.url.gsub(v[0], v[1])
+  end
+  
+  def is_dev? #проверка на режим разработки
     request.subdomains.first == 'dev' && $enable_dev
   end
   def cur_locale #текущая локаль

@@ -45,6 +45,8 @@ en:
   land_for_production: "land for production"
   own_land_for_production: "The area of own land for production"
   own_production_and_warehouse_space: "The area of own production and warehouse space"
+  opposite_locale_name: "РУС"
+  
   
   #boat_parameters names
   crew_limit: "Crew limit"
