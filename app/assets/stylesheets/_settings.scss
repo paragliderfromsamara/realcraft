@@ -25,6 +25,19 @@
 }
 @import "foundation-sites";
 @import "realcraft";
+
+$foundation-palette: (
+  primary: $rc-primary-dark-blue,
+  secondary: $rc-gray,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+  rc-primary-blue: $rc-primary-blue,
+  rc-primary-dark-blue: $rc-primary-dark-blue,
+  rc-secondary-dark-blue: $rc-secondary-dark-blue,
+  rc-blue: $rc-blue,
+);
+
 $regular-fonts: 'clear_sans_regular','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $bold-fonts: 'clear_sans_bold','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $medium-fonts: 'clear_sans_medium','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -51,8 +64,13 @@ a.locale-link
 {
     text-decoration: underline;
 }
+
 .title-bar
 {
+    &#responsive
+    {
+        background-color: darken($topbar-background, 5%);
+    }
     #locale-link
     {
         padding-top: 0.46rem;
@@ -197,3 +215,5 @@ th#modification
 {
     text-align: center;
 }
+
+

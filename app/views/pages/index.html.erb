@@ -15,18 +15,18 @@
     <%j=0%>
     <% hash_boats_list.each do |b|%>
     <%j+=1%>
-    <div class = "boat-index-block tb-pad-s">
+    <div class = "pages-index-boat-item ">
         <div class = "<%= j.odd? ? "odd" : "even"  %>-wrapper"></div>
-        <div class = "content">
+        <div class = "content tb-pad-s">
             <div class = "row tb-pad-s">
                 <div class = "small-12 medium-4 columns">
                     <%= rc_header(b[:name], t(:model), "#{t :design_category} #{b[:design_category]}") %>
                 </div>
                 <div class = "small-12 medium-8 columns">
-                    <% if !b[:main_params_big].blank?%>
+                    <% if !b[:index_page_parameters].blank?%>
                         <div class = "row">
-                        <% b[:main_params_big].each do |i|%>
-                            <div class = "small-4 columns">
+                        <% b[:index_page_parameters].each do |i|%>
+                            <div class = "small-4 columns params-list">
                                 <p class = "rc-param-name-b text-center">
                                     <%= b[:boat_parameters][i][:title] %>
                                 </p>
@@ -49,6 +49,9 @@
             <div class = "row tb-pad-s">
                 <div class = "small-12 columns">
                     <%= image_tag b[:slider_images].first, "data-interchange".to_sym => make_photos_interchange(b[:slider_images].first), style: "padding:0; margin:0;", vspace: "0" %>
+                    <div class = "tb-pad-s">
+                    <%= link_to ("<i class = \"fi-arrow-right\"></i> #{t(:go_to_item, item: b[:name])}").html_safe, b[:url], class: "rc-primary-blue button expanded large" %>
+                    </div>
                 </div>
             </div>
         </div>

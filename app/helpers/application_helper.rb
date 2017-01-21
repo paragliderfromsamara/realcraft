@@ -67,6 +67,7 @@ fishermen."
                   IN THE MOST EXTREME 
                     CONDITIONS"
     v = {
+      url: realcraft_190_path,
       name: "REALCRAFT 190",
       modifications_present_text_en: "Realcraft 190 boats can be delivered in several versions of equipment packages of bow cockpit and main cockpit seats",
       modifications_present_text_ru: "Лодки Realcraft 190 могут поставляться в двух модификациях носового кокпита и кресел основного кокпита.",
@@ -80,6 +81,7 @@ fishermen."
       slogan_en: @en_slogan, 
       header_description_ru: @ru_head_desc, 
       header_description_en: @en_head_desc,
+      index_page_parameters: [14, 4, 5],
       main_params_big: [0,4,5],
       main_params_small: [1,2,3,14,9,10],
       boat_parameters: [
@@ -140,6 +142,7 @@ of large loads to the summer house on the islands or just cruises with a good co
     @ru_slogan = "Для заядлых рыбаков, патруля, спасательных операций ну и конечно для приключений в компании друзей.".mb_chars.upcase
     @en_slogan = "FOR TRUE FISHERMEN, RESCUE AND PATROL OPERATIONS OR JUST CRUISES WITH A GOOD COMPANY OF FRIENDS"
     v = {
+      url: realcraft_200_path,
       name: "REALCRAFT 200",
       modifications_present_text_en: "Realcraft 190 boats can be delivered in several versions of equipment packages of bow cockpit and main cockpit seats",
       modifications_present_text_ru: "Лодки Realcraft 190 могут поставляться в двух модификациях носового кокпита и кресел основного кокпита.",
@@ -154,6 +157,7 @@ of large loads to the summer house on the islands or just cruises with a good co
       slogan_en: @en_slogan, 
       header_description_ru: @ru_head_desc, 
       header_description_en: @en_head_desc, 
+      index_page_parameters: [14, 4, 5],
       main_params_big: [0,4,5],
       main_params_small: [1,2,3,14,9,10],
       boat_parameters: [

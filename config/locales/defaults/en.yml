@@ -46,6 +46,7 @@ en:
   own_land_for_production: "The area of own land for production"
   own_production_and_warehouse_space: "The area of own production and warehouse space"
   opposite_locale_name: "РУС"
+  go_to_item: "Go to %{item}"
   
   
   #boat_parameters names

@@ -124,7 +124,38 @@ div#rc-header
     
     background-image: url("/files/pattern_map.png");
 }
-
+div.rc-param-val-b
+{
+    @include breakpoint(medium)
+    {
+        font-size: 2.3rem;
+    }
+    @include breakpoint(small)
+    {
+        font-size: 1.5rem;
+    }
+}
+div.rc-param-val-s
+{
+    
+    font-size: 1.5rem;
+}
+.rc-param-name-b
+{
+    @include breakpoint(medium)
+    {
+        font-size: 0.9rem;
+    }
+    @include breakpoint(small)
+    {
+        font-size: 0.8rem;
+    }
+    
+}
+.rc-param-name-s
+{
+    font-size: 0.8rem;
+}
 div#rc-parameters
 {
     position: relative;
@@ -134,38 +165,7 @@ div#rc-parameters
     {
         color: $white;
     }
-    div.rc-param-val-b
-    {
-        @include breakpoint(medium)
-        {
-            font-size: 2.3rem;
-        }
-        @include breakpoint(small)
-        {
-            font-size: 1.5rem;
-        }
-    }
-    div.rc-param-val-s
-    {
-        
-        font-size: 1.5rem;
-    }
-    .rc-param-name-b
-    {
-        @include breakpoint(medium)
-        {
-            font-size: 0.9rem;
-        }
-        @include breakpoint(small)
-        {
-            font-size: 0.8rem;
-        }
-        
-    }
-    .rc-param-name-s
-    {
-        font-size: 0.8rem;
-    }
+
 }
 
 .blue-block
@@ -189,33 +189,5 @@ div#rc-parameters
     }
 }
 
-.boat-index-block
-{
-    //background-image: url("/files/pattern_map_white.png");
-    //@extend .rc-map-pattern;
-    z-index: 10;
-    position: relative;
-    p, h1, h2, h3, h4, a 
-    {
-        color: $rc-primary-dark-blue;
-    }
-    .odd-wrapper, .even-wrapper {position: absolute; top: 0; left: 0; height: 100%; width: 100%;z-index: 11;}
-    .odd-wrapper
-    {
-        background-color: darken($white, 4%);;
-        //@include my_opacity(0.76);
-    }
-    .even-wrapper
-    {
-        background-color: darken($white, 7%);
-        
-       // @include my_opacity(0.76);
-    }
-    .content
-    {
-        position: relative;
-        z-index: 13;
-    }
-    
-}
+
 
