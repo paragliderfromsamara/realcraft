@@ -82,9 +82,23 @@ a.locale-link
 }
 .top-bar 
 {
-    @include breakpoint(small) 
+    @include breakpoint(small only) 
     {
-       padding: 1rem;
+       &, &#main-menu{padding: 0;}
+       
+       li 
+       {
+           display: block;
+           &:hover
+           {
+              background-color: darken($topbar-background, 5%); 
+           }
+          &, a 
+          {
+              font-size: 1rem;
+              padding: 0.5rem 0 0.5rem 0;
+          }
+       }
      }
     @include breakpoint(medium) 
     {
@@ -96,37 +110,34 @@ a.locale-link
       }
     a{
         color: $white; font-family: $bold-fonts;
-        @include breakpoint(small) 
+        @include breakpoint(medium) 
         {
            font-size: 0.8rem;
          }
-        @include breakpoint(medium) 
-        {
-           font-size: 0.9rem;
-         }
          @include breakpoint(large) 
          {
-            font-size: 1.0rem;
+            font-size: 0.9rem;
           }
       }
-    a:hover {color: $light-gray;}
+    a:hover {color: darken($white, 15%);}
     li.top-bar-links{
         position:relative;
         
 
         @include breakpoint(small) 
         {
-                   top: 0.1rem;
+                   text-align: left;
          }
         @include breakpoint(medium) 
         {
+                   text-align: center;
                    top: 0.2rem;
          }
          @include breakpoint(large) 
          {
                     top: 0.1rem;
           }
-        text-align: center;
+        
     }
     li.top-bar-img a
     {
