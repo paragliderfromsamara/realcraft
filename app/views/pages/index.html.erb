@@ -19,18 +19,18 @@
         <div class = "<%= j.odd? ? "odd" : "even"  %>-wrapper"></div>
         <div class = "content tb-pad-s">
             <div class = "row tb-pad-s">
-                <div class = "small-12 medium-4 columns">
+                <div class = "small-12 medium-5 columns">
                     <%= rc_header(b[:name], t(:model), "#{t :design_category} #{b[:design_category]}") %>
                 </div>
-                <div class = "small-12 medium-8 columns">
+                <div class = "small-12 medium-7 columns">
                     <% if !b[:index_page_parameters].blank?%>
                         <div class = "row">
                         <% b[:index_page_parameters].each do |i|%>
                             <div class = "small-4 columns params-list">
-                                <p class = "rc-param-name-b text-center">
+                                <p class = "rc-param-name-s text-center">
                                     <%= b[:boat_parameters][i][:title] %>
                                 </p>
-                                <div class="stat text-center rc-param-val-b">
+                                <div class="stat text-center rc-param-val-s">
                                     <%= b[:boat_parameters][i][:value] %><%= b[:boat_parameters][i][:unit] %>
                                 </div>
                             </div>

@@ -2,6 +2,11 @@
 <html>
   <head>
     <title><%= @title.blank? ? t(:default_title) : @title %></title>
+    <meta name = 'description' content = '<%= @meta_content.nil? ? t(:default_meta_description) : @meta_content %>' >
+    <meta name = 'keywords' content = '<%= @meta_keywords.nil? ? t(:default_meta_keywords) : @meta_keywords %>' >
+    <meta property="og:title" content="<%= @title.blank? ? t(:default_title) : @title %>">
+    <meta property="og:image" content="<%= @page_image.nil? ? '/slider/rc200/4_slider_small.jpg' : @page_image %>">
+    <meta property="og:description" content="<%= @meta_content.nil? ? t(:default_meta_description) : @meta_content %>">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +14,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+      <!-- Yandex.Metrika counter -->
+      <script type="text/javascript">
+          (function (d, w, c) {
+              (w[c] = w[c] || []).push(function() {
+                  try {
+                      w.yaCounter42383514 = new Ya.Metrika({
+                          id:42383514,
+                          clickmap:true,
+                          trackLinks:true,
+                          accurateTrackBounce:true,
+                          webvisor:true
+                      });
+                  } catch(e) { }
+              });
+
+              var n = d.getElementsByTagName("script")[0],
+                  s = d.createElement("script"),
+                  f = function () { n.parentNode.insertBefore(s, n); };
+              s.type = "text/javascript";
+              s.async = true;
+              s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+              if (w.opera == "[object Opera]") {
+                  d.addEventListener("DOMContentLoaded", f, false);
+              } else { f(); }
+          })(document, window, "yandex_metrika_callbacks");
+      </script>
+      <noscript><div><img src="https://mc.yandex.ru/watch/42383514" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      <!-- /Yandex.Metrika counter -->
       <div id = "header">
           <div id = "responsive" class="title-bar row" data-responsive-toggle="main-menu" data-hide-for="medium">
               <div class = "small-8 columns">
@@ -26,7 +60,9 @@
               <div class = "small-4 columns">
                   <div class="top-bar-right">
                       <ul class = 'menu'>
-                          <li  id = "locale-link"><%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link"%></li>
+                          <li  id = "locale-link">
+                              <%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link" if is_all_locales_enabled? %>
+                          </li>
                       </ul>
                   </div>
                </div>
@@ -40,12 +76,13 @@
                     <li class = "small-12 medium-2 column top-bar-links text-center"><%= link_to t(:about), about_path %></li>
                     <li class = "small-12 medium-2 column top-bar-links text-center"><%= link_to "RealCraft 190", realcraft_190_path %></li>
                     <li class = "small-12 medium-2 column top-bar-links text-center"><%= link_to "RealCraft 200", realcraft_200_path %></li>
-                    <li class = "small-12 medium-2 column top-bar-links text-center"><%= link_to t(:contacts), contacts_path %></li>
-                    <li class = "medium-2 column top-bar-links text-right hide-for-small-only"><%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link" %></li>
+                    <li class = "small-12 medium-2 column top-bar-links text-center"><a onclick = "$('html, body').animate({ scrollTop: $('#footer').offset().top}, 1000);"><%= t(:contacts) %></a></li>
+                    <li class = "medium-2 column top-bar-links text-right hide-for-small-only"><%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link" if is_all_locales_enabled? %></li>
                   </ul>
                 </div>
           </div>
       </div>
     <%= yield %>
+    <%= render "pages/footer" %>
   </body>
 </html>

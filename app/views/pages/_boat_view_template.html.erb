@@ -140,8 +140,8 @@
                    <%j+=1%>
                    <div class = "small-12 medium-6 large-5 columns">
                        <h7><%= t(:scheme) %> <%= j.to_s %></h7>
-                       <a><%= image_tag i, class: "kra-ph-box", "rc-box-phs".to_sym => "[#{i}, small]", "rc-box-collection".to_sym => "accomodation-schema-#{mCounter}", "rc-box-title".to_sym => "#{@boat[:name]} #{m[:name]}: #{t(:crew_accomodation)} #{t(:scheme)} #{j}"%>
-                       </a>
+                       <%= image_tag i %>
+                       
                    </div>
                <%end%>
            </div>
@@ -167,7 +167,7 @@
                 </p>
             </div>
             <div class = "small-12 medium-7 columns tb-pad-s">
-                <a><%= image_tag @boat[:engeneering_img], class: "kra-ph-box"  %></a>            
+                <%= image_tag @boat[:engeneering_img] %>            
             </div>
         </div>
         <%= render "boat_params_table" %>

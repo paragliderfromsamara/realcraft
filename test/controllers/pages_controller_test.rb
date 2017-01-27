@@ -1,24 +1,24 @@
 require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get pages_index_url
-    assert_response :success
+  test "should get root" do
+    get root_path
+    assert_response :success, "Не удалось открыть главную страницу"
   end
 
   test "should get about" do
-    get pages_about_url
-    assert_response :success
+    get about_path
+    assert_response :success, "Не удалось открыть страницу о нас"
   end
 
   test "should get realcraft_190" do
-    get pages_realcraft_190_url
-    assert_response :success
+    get realcraft_190_path
+    assert_response :success, "Не удалось открыть страницу realcraft_190"
   end
 
   test "should get realcraft_200" do
-    get pages_realcraft_200_url
-    assert_response :success
+    get realcraft_200_path
+    assert_response :success, "Не удалось открыть страницу realcraft_200"
   end
 
 end

@@ -126,9 +126,13 @@ div#rc-header
 }
 div.rc-param-val-b
 {
+    @include breakpoint(large)
+    {
+        font-size: 2.5rem;
+    }
     @include breakpoint(medium)
     {
-        font-size: 2.3rem;
+        font-size: 2.0rem;
     }
     @include breakpoint(small)
     {
@@ -166,6 +170,11 @@ div#rc-parameters
         color: $white;
     }
 
+}
+
+.light-gray-block
+{
+    background-color: $light-gray;
 }
 
 .blue-block

@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
   end
   
   def check_waiting_page
-    render "pages/please_wait", layout: false if need_render_wait_page?
+    if need_render_wait_page?
+      render "pages/please_wait", layout: false 
+    elsif !is_enabled_locale?
+        redirect_to opposite_locale_url if !is_dev?
+    end
   end
   # Получаем локаль из домена верхнего уровня или возвращаем nil, если такая локаль недоступна
   # Вам следует поместить что-то наподобие этого:

@@ -17,6 +17,24 @@
 //= require turbolinks
 //= require_tree .
 
+var footerResFunc = function()
+    {
+        var f,c,l,curState;
+        f = $("#footer");
+        c = f.find("#footer-contacts");
+        l = f.find("#footer-logo");
+        curState = Foundation.MediaQuery.current;
+        if (curState !== "small")
+        {
+            f.html(l).append(c);
+            l.removeClass("tb-pad-s");
+        }
+        else 
+        {
+            f.html(c).append(l);
+            l.addClass("tb-pad-s");
+        }
+    }
 
 var readyFunc = function()
 {
@@ -26,7 +44,6 @@ var readyFunc = function()
     requestHash = window.location.hash;
    // elem = new Foundation.Tabs("#rc-data-tabs", {});
     windowResizeFunc();
-    
     $("#rc-data-tabs").on('change.zf.tabs', function() {
         var tOffset = $("#rc-data-tabs").offset().top - 20;
         var curScroll = $(window).scrollTop();
@@ -36,10 +53,9 @@ var readyFunc = function()
         return false;
     });
     
-    if ($('[data-tabs]').length > 0 && requestHash.length>0)
+    if ($('[data-tabs]').length > 0 && requestHash.length>1)
     {
-        $("#rc-data-tabs").foundation('selectTab', $(requestHash));
-        
+            $("#rc-data-tabs").foundation('selectTab', $(requestHash));   
     }
     
     //elem = new Foundation.DropdownMenu($("#dd-menu"));
@@ -49,16 +65,9 @@ var readyFunc = function()
 var windowResizeFunc = function()
 {
     $(".orbit-container").height($(".orbit").height());
+    footerResFunc();
 }
 
-function getHashCodeFromRequest()
-{
-  var curLoc = window.location.href;
-  var s = "";
-  if (curLoc.indexOf("#") > 0){for(var i=curLoc.indexOf("#"); i<curLoc.length; i++) s+= curLoc[i];}
-  return s;
-  
-}
 
 
 document.addEventListener("turbolinks:load", readyFunc);
