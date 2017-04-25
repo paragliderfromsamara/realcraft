@@ -1,0 +1,19 @@
+<%if !content.blank? %>
+    <% content.each do |row| %>
+        <div <%= row[:wrapper_class].blank? ? "" : "class = #{row[:wrapper_class]}" %>>
+            
+            <div class = "row <%= row[:row_class].nil? ? "" : row[:row_class] %>">
+                <%if !row[:columns].empty?%>
+                    <%row[:columns].each do |c|%>
+                        <div class = "<%= c[:col_class].blank? ? "small-12" : c[:col_class] %> columns">
+                            <p>
+                                <%= c["#{cur_locale}_content".to_sym].html_safe if !c["#{cur_locale}_content".to_sym].blank? %>
+                                <%= c[:content].html_safe if !c[:content].blank? %>
+                            </p>
+                        </div>
+                    <%end%>
+                <%end%>
+            </div>
+        </div>
+    <%end%>
+<%end%>

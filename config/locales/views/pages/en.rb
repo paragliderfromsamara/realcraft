@@ -36,7 +36,9 @@
       aft_view: "Aft view",
       unit: "Unit", 
       parameter_name: "Parameter",
-      parameters_table: "Technical parameters table"
-      
+      parameters_table: "Technical parameters table",
+      prices: "Prices",
+      dealers: "Dealers",
+      products: "Products"
     }
 }

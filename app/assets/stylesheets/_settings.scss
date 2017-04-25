@@ -52,14 +52,15 @@ $medium-black:  #232323;
 $thumbnail-border: solid 2px $white;
 
 ///top-bar settings
-$menu-item-color: $white;
+$menu-item-color: $rc-primary-dark-blue;
 $menu-item-color-active: $dark-gray;
-$menu-item-background-active:none;
+$menu-item-background-active: none;
 $topbar-background: $rc-primary-dark-blue;
 $topbar-title-spacing: 0;
-$dropdownmenu-arrow-color: $white;
 $topbar-padding: 1.3rem; 
 $hr-width: 100%;
+$dropdownmenu-background: $rc-primary-dark-blue;
+$dropdownmenu-arrow-color: $white;
 a.locale-link
 {
     text-decoration: underline;

@@ -2,6 +2,14 @@ class PagesController < ApplicationController
   def index
   end
 
+  def prices
+    @title = t(:prices)
+  end
+  
+  def dealers
+    @title = t(:dealers)
+  end
+  
   def about
     @title = t(:about)
   end

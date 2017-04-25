@@ -36,6 +36,9 @@
       aft_view: "Вид с кормы",
       unit: "Ед. изм.",
       parameter_name: "Параметр",
-      parameters_table: "Технические характеристики"
+      parameters_table: "Технические характеристики",
+      prices: "Цены",
+      dealers: "Дилеры",
+      products: "Лодки"
     }
 }

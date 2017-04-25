@@ -21,6 +21,10 @@ $rc-red: #ce0037;
 $rc-blue: #489fdf;
 //-----------------------
 
+.medium-font
+{
+    font-size: 1.5rem;
+}
 
 .rc-bold
 {
@@ -58,6 +62,10 @@ $rc-blue: #489fdf;
     p, h1, h2, h3, h4 
     {
         color: $white;
+    }
+    a
+    {
+        color: smart-scale($rc-primary-blue, 50%);
     }
 }
 .dark-blue-bg
@@ -192,9 +200,10 @@ div#rc-parameters
     {
         color: $white;
     }
-    a:hover
-    {
-        color: $light-gray;
+    a
+    {   
+        color: smart-scale($rc-primary-blue, 70%);
+        &:hover {color: smart-scale($rc-primary-blue, 50%);}
     }
 }
 
