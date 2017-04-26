@@ -39,6 +39,6 @@
       parameters_table: "Technical parameters table",
       prices: "Prices",
       dealers: "Dealers",
-      products: "Products"
+      products: "Boats"
     }
 }
