@@ -56,6 +56,7 @@ $menu-item-color: $rc-primary-dark-blue;
 $menu-item-color-active: $dark-gray;
 $menu-item-background-active: none;
 $topbar-background: $rc-primary-dark-blue;
+$topbar-submenu-background: $rc-primary-dark-blue;
 $topbar-title-spacing: 0;
 $topbar-padding: 1.3rem; 
 $hr-width: 100%;
@@ -83,6 +84,7 @@ a.locale-link
 }
 .top-bar 
 {
+    li{z-index: 300;}
     @include breakpoint(small only) 
     {
        &, &#main-menu{padding: 0;}

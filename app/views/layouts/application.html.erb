@@ -53,7 +53,7 @@
       </script>
       <noscript><div><img src="https://mc.yandex.ru/watch/42383514" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
       <!-- /Yandex.Metrika counter -->
-      <div id = "header">
+      <div id = "header" data-turbolinks-permanent>
           <div id = "responsive" class="title-bar row" data-responsive-toggle="main-menu" data-hide-for="medium">
               <div class = "small-8 columns">
                   <button class="menu-icon" type="button" data-toggle></button>
@@ -75,7 +75,7 @@
                           </li>
                       </ul>
                   </div>
-               </div>
+              </div>
           </div>
           <div class="top-bar" id = "main-menu" data-animate="hinge-in-from-top spin-out">
                 <div class = "row float-center">
@@ -87,6 +87,12 @@
                         <%= link_to t(:about), about_path %>
                     </li>
                     <li class = "small-12 medium-2 column top-bar-links text-center">
+                        <a onclick = "$('html, body').animate({ scrollTop: $('#footer').offset().top}, 1000);">
+                            <%= t(:contacts) %>
+                        </a>
+                    </li>
+                    <li class = "small-12 medium-2 column top-bar-links text-center"><%= link_to t(:dealers), dealers_path %></li>
+                    <li class = "small-12 medium-2 column top-bar-links text-center">
                         <%= link_to t(:products), "#" %>
                         <ul class = "menu">
                             <li>
@@ -97,13 +103,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li class = "small-12 medium-2 column top-bar-links text-center">
-                        <a onclick = "$('html, body').animate({ scrollTop: $('#footer').offset().top}, 1000);">
-                            <%= t(:contacts) %>
-                        </a>
+                    <li class = "medium-2 column top-bar-links text-right hide-for-small-only">
+                        <%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link" if is_all_locales_enabled? %>
                     </li>
-                    <li class = "small-12 medium-2 column top-bar-links text-center"><%= link_to t(:dealers), dealers_path %></li>
-                    <li class = "medium-2 column top-bar-links text-right hide-for-small-only"><%= link_to t(:opposite_locale_name), opposite_locale_url, class: "locale-link" if is_all_locales_enabled? %></li>
                   </ul>
                 </div>
           </div>

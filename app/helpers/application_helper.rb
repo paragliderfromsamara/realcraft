@@ -3,6 +3,11 @@ module ApplicationHelper
   def make_photos_interchange(url, size = "small")
     "[#{url.gsub(size, "small")}, small], [#{url.gsub(size, "medium")}, medium], [#{url.gsub(size, "large")}, large], [#{url.gsub(size, "xlarge")}, xlarge]"
   end
+  
+  
+  def wrapper_bg_image(img) #добавляет адрес к папке с изображениями фона блока
+    %{/content_blocks_images/#{img}}
+  end
   def main_page_slider_imgs #изображения слайдера с главной страницы
     [
       "/slider/rc200/4_slider_small.jpg",
@@ -215,10 +220,10 @@ on a distance spacing of petrol and accumulators. There is also a big section wi
     imgs.each do |i|
       next if i.index("small").nil?
       t = "data-interchange=\"[#{i}, small], [#{i.gsub("small", "medium")}, medium], [#{i.gsub("small", "large")}, large], [#{i.gsub("small", "xlarge")}, xlarge]\""
-      v += "<li class=\"#{"is-active " if j==0}orbit-slide\">
-            <div class = \"rc-slide\" style = \"background-image: url('#{i}');\" #{t}>
+      v += "
+            <div class = \"#{"is-active " if j==0}orbit-slide rc-slide\" style = \"background-image: url('#{i}');\" #{t}>
             </div>
-           </li>"
+           "
       j+= 1
     end
     return v

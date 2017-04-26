@@ -17,8 +17,9 @@ module PagesHelper
                    ] 
         },
         {
-          wrapper_class: "light-gray-block",
-          row_class: "tb-pad-s",
+          wrapper_bg_image: "boat_test_top_1_small.jpg",
+          fog_class: "hard-fog white-bg",
+          row_class: "tb-pad-l",
           columns: [
                       {
                         #2-й и 3-й абзацы
@@ -33,7 +34,7 @@ module PagesHelper
                    ]
         },
         {
-          row_class: "tb-pad-s",
+          row_class: "tb-pad-m",
           columns: [
                         {
                           #4-й абзац
@@ -51,7 +52,7 @@ module PagesHelper
         },
         {
           wrapper_class: "blue-block",
-          row_class: "tb-pad-s",
+          row_class: "tb-pad-m",
           columns: [
                        {
                          #6-й абзац
@@ -62,8 +63,10 @@ module PagesHelper
                    ] 
         },
         {
-          wrapper_class: "light-blue-block",
-          row_class: "tb-pad-s",
+          wrapper_class: "blue-bg",
+          wrapper_bg_image: "boat_1_small.jpg",
+          fog_class: "hard-fog dark-blue-bg",
+          row_class: "tb-pad-l",
           columns: [
                        {
                          #7-й абзац

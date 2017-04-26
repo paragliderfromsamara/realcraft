@@ -19,7 +19,6 @@
 @import "foundation-sites";
 @import "motion-ui";
 @import "_settings";
-
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 @include foundation-grid;
@@ -61,6 +60,8 @@
 {
     position: relative;
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index:1;
 }
 //
@@ -141,3 +142,7 @@
     }
 }
 
+#header
+{
+    z-index: 99999;
+}

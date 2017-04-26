@@ -65,7 +65,9 @@ $rc-blue: #489fdf;
     }
     a
     {
-        color: smart-scale($rc-primary-blue, 50%);
+        color: smart-scale($rc-primary-blue, 90%);
+        &:hover {color: smart-scale($rc-primary-blue, 70%);}
+        text-decoration: underline;
     }
 }
 .dark-blue-bg
