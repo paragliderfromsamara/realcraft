@@ -20,10 +20,42 @@ $rc-gray: #7c878e;
 $rc-red: #ce0037;
 $rc-blue: #489fdf;
 //-----------------------
-
+.white-font
+{
+    p, h1, h2, h3, h4, .stat
+    {
+        color: $white;
+    }
+    a
+    {   
+        color: smart-scale($rc-primary-blue, 70%);
+        &:hover {color: smart-scale($rc-primary-blue, 50%);}
+    }
+    /*a
+    {
+        color: smart-scale($rc-primary-blue, 90%);
+        &:hover {color: smart-scale($rc-primary-blue, 70%);}
+        text-decoration: underline;
+    }*/
+}
 .medium-font
 {
-    font-size: 1.5rem;
+    a, p
+    {
+        @include breakpoint(small) {font-size: 1.1rem;}
+        @include breakpoint(medium) {font-size: 1.2rem;}
+        @include breakpoint(large) {font-size: 1.3rem;}
+    }
+}
+
+.large-font
+{
+    a, p
+    {
+        @include breakpoint(small) {font-size: 1.35rem;}
+        @include breakpoint(medium) {font-size: 1.5rem;}
+        @include breakpoint(large) {font-size: 2.0rem;}
+    }
 }
 
 .rc-bold
@@ -43,10 +75,7 @@ $rc-blue: #489fdf;
 .red-bg
 {
     background-color: $rc-red;
-    p, h1, h2, h3, h4 
-    {
-        color: $white;
-    }
+    @extend .white-font;
 }
 .light-blue-bg
 {
@@ -59,25 +88,12 @@ $rc-blue: #489fdf;
 .blue-bg
 {
     background-color: $rc-blue;
-    p, h1, h2, h3, h4 
-    {
-        color: $white;
-    }
-    a
-    {
-        color: smart-scale($rc-primary-blue, 90%);
-        &:hover {color: smart-scale($rc-primary-blue, 70%);}
-        text-decoration: underline;
-    }
+    @extend .white-font;
 }
 .dark-blue-bg
 {
     background-color: $rc-primary-dark-blue;
-    p, h1, h2, h3, h4 
-    {
-        color: $white;
-    }
-
+    @extend .white-font;
 }
 .white-bg
 {
@@ -175,10 +191,7 @@ div#rc-parameters
     position: relative;
     width: 100%;
     @extend .rc-map-pattern;
-    p, h1, h2, h3, h4, .stat
-    {
-        color: $white;
-    }
+    @extend .white-font;
 
 }
 
@@ -190,23 +203,12 @@ div#rc-parameters
 .blue-block
 {
     background-color: $rc-primary-dark-blue;
-    p, h1, h2, h3, h4 
-    {
-        color: $white;
-    }
+    @extend .white-font;
 }
 .light-blue-block
 {
     background-color: #3b4559;
-    p, h1, h2, h3, h4, a 
-    {
-        color: $white;
-    }
-    a
-    {   
-        color: smart-scale($rc-primary-blue, 70%);
-        &:hover {color: smart-scale($rc-primary-blue, 50%);}
-    }
+    @extend .white-font;
 }
 
 

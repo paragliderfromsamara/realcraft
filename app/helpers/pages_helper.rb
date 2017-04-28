@@ -7,16 +7,6 @@ module PagesHelper
   def dealers_page_content
     [
         {
-          #1-й абзац
-          row_class: "tb-pad-s",
-          columns: [
-                       {
-                          ru_content: %{Самарский завод моторных лодок «Салют» выпускает лучшие лодки в России уже более 12 лет. Мы зарегистрировали в Европе нашу новую торговую марку REALCRAFT® и провели сертификацию двух катеров, разработанных нами специально для Европы на базе проверенных и хорошо испытанных моделей.},
-                          en_content: %{Samara Motor-Boat Plant «Salut» has been producing the best boats in Russia for more than 12 years. We've registered in Europe our new trademark REALCRAFT® and certified two boats, designed specifically for Europe on the basis of proven and well-tested models.}
-                        }
-                   ] 
-        },
-        {
           wrapper_bg_image: "boat_test_top_1_small.jpg",
           fog_class: "hard-fog white-bg",
           row_class: "tb-pad-l",
@@ -80,5 +70,93 @@ module PagesHelper
   end
   
   def prices_page_content
+    [
+        {
+          #wrapper_bg_image: "boat_2_small.jpg",
+          #fog_class: "hard-fog dark-blue-bg",
+          row_class: "tb-pad-m medium-font",
+          columns: [
+                      {
+                        #3-й абзац
+                        col_class: "small-12 text-center medium-font",
+                        ru_content: %{Поскольку только недавно мы получили CE-сертификаты, мы пока еще не имеем дилеров в ЕС.},
+                        en_content: %{Because we received CE -certificates only recently, we have no dealers in EU yet.}
+                      }
+                   ]
+        },
+        {
+          wrapper_bg_image: "boat_2_small.jpg",
+          fog_class: "hard-fog dark-blue-bg",
+          row_class: "tb-pad-m medium-font white-font",
+          columns: [
+                      {
+                        #3-й абзац
+                        col_class: "small-12 medium-5 text-center",
+                        ru_content: %{Поскольку такая покупка может показаться хлопотной,  до тех пор, пока в вашей стране  не появится удобный для Вас дилер, мы предлагаем особые цены для наших покупателей из Европы.},
+                        en_content: %{Since such a purchase may seem troublesome, until we have no dealer convenient for you in our country, we offer special prices for our customers from Europe.}
+                      },
+                      {
+                        #4-й абзац
+                        col_class: "small-12 medium-6 medium-offset-1 text-center",
+                        ru_content: %{Мы можем доставить лодку непосредственно на ваше место, но, к сожалению, это достаточно дорого.  Поэтому мы предлагаем передать вам лодку в Российской Федерации около таможенного пункта пропуска на удобной для вас границе с Евросоюзом.},
+                        en_content: %{We can deliver the boat directly to your place, but, unfortunately, it is quite expensive. Therefore, we propose to give you a boat in the Russian Federation near the customs checkpoint at a convenient border with the European Union.}
+                      }
+                   ]
+        },
+        {
+          #wrapper_bg_image: "boat_3_small.jpg",
+          #fog_class: "hard-fog white-bg",
+          wrapper_class: "blue-bg",
+          row_class: "tb-pad-m large-font",
+          columns: [
+                      {
+                        col_class: "small-12 medium-10 medium-centered text-center",
+                        ru_content: %{от <span class = "stat">7000</span> ЕВРО за лодку},
+                        en_content: %{from about <span class = "stat">7000</span> EUR for a high quality boat...}
+                      }
+                   ]
+        },
+        {
+          wrapper_bg_image: "boat_3_small.jpg",
+          fog_class: "hard-fog white-bg",
+          row_class: "tb-pad-m large-font",
+          columns: [
+                      {
+                        #5-й абзац
+                        col_class: "small-12 medium-10 medium-centered text-center",
+                        ru_content: %{С учетом  предлагаемых скидок к нашим ценам в России вы получаете возможность приобрести катер по уникальной цене – от  7000 ЕВРО за лодку высокого качества с длиной корпуса 5,1 метра, несравнимо меньшей, чем цена других предлагаемых в Европе лодок соответствующей категории.},
+                        en_content: %{Taking into account the offered discounts to our prices in Russia, you get the opportunity to purchase a boat at a unique price, incomparably less than the price of other boats of the corresponding category offered in Europe - from about 7000 EUR for a high quality boat with a hull length of 5.1 meters.}
+                      }
+                   ]
+        },
+        {
+          #wrapper_bg_image: "boat_3_small.jpg",
+          #fog_class: "hard-fog white-bg",
+          wrapper_class: "dark-blue-bg",
+          row_class: "tb-pad-s large-font",
+          columns: [
+                      {
+                        #5-й абзац
+                        col_class: "small-12 medium-10 medium-centered text-center",
+                        ru_content: %{Если Вы хотите приобрести лодку, напишите нам на почту #{mail_to "info@realcraftboats.com"}.},
+                        en_content: %{If you want to purchase a boat, write us #{mail_to "info@realcraftboats.com"}.}
+                      }
+                   ]
+        },
+        {
+          #wrapper_bg_image: "boat_3_small.jpg",
+          #fog_class: "hard-fog white-bg",
+          wrapper_class: "dark-blue-bg",
+          row_class: "tb-pad-s medium-font",
+          columns: [
+                      {
+                        #5-й абзац
+                        col_class: "small-12 medium-7 medium-centered text-center",
+                        ru_content: %{Мы гарантируем высокое качество катеров, соблюдение договорных положений о поставках и гарантии.},
+                        en_content: %{We guarantee the high quality of boats, compliance with contractual provisions for supplies and guarantees.}
+                      }
+                   ]
+        }
+    ]
   end
 end

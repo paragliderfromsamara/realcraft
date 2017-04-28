@@ -1,20 +1,10 @@
-<div class="orbit" role="region" aria-label="RealCraft Motor Boats" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-  <div id = "slogan">
-      <div class = 'row tb-pad-s' style = " position: relative;margin-left: auto; margin-right: auto;">
-         <div class = "small-12 columns">
-             <img id = "slogan-img" src = "/files/main_slogan.png">
-         </div>
-      </div>
-  </div>
-<ul class="orbit-container">
-  <%= slider_imgs(main_page_slider_imgs).html_safe  %>
-</ul>
-</div>    
-
-<div class = "light-blue-block">
-    <div class = "tb-pad-m">
-        <%=  %>
+<div class = "tb-pad-s">
+    <div class = "row">
+        <div class = "small-12 columns">
+            <%= rc_header(t(:prices))  %>
+        </div>
     </div>
 </div>
 
+<%= render "simple_pages_content", content: prices_page_content %>
 

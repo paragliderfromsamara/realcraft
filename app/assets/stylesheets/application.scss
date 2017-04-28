@@ -55,13 +55,22 @@
   padding-bottom: 8rem;  
 }
 
-
+.large-font
+{
+    a, p
+    {
+        @include breakpoint(small) {font-size: 1.35rem;}
+        @include breakpoint(medium) {font-size: 1.5rem;}
+        @include breakpoint(large) {font-size: 2.0rem;}
+    }
+}
 .c-box
 {
     position: relative;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     z-index:1;
 }
 //
