@@ -1,0 +1,20 @@
+<h1>Заявка на <%= @request[:boat_name] %></h1>
+
+<h3>
+    Информация об авторе заявки:
+</h3>
+<p>
+    Имя: <%= @request[:name] %>
+</p>
+<p>
+    Контактный E-mail: <%= @request[:email] %>
+</p>
+<p>
+    Лодка: <%= @request[:boat_name] %>
+</p>
+<h3>
+    Комментарий
+</h3>
+<p>
+    <%= @request[:comment].blank? ? "Без комментария" : @request[:comment] %>
+</p>

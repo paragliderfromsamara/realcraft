@@ -39,6 +39,15 @@
       parameters_table: "Технические характеристики",
       prices: "Цены",
       dealers: "Дилеры",
-      products: "Лодки"
+      products: "Лодки",
+      boat_request: "Заявка на приобретение лодки",
+      mail_comment: "Комментарий",
+      mail_sel_boat: "Выберите лодку",
+      mail_boat: "Название лодки",
+      fail_mail_msg: "Необходимо ввести правильный E-mail адрес",
+      send_request_mail: "Отправить запрос",
+      mail_name: "Ваше имя",
+      name_example: "Пётр Иванов",
+      mail_name_error: "Укажите Ваше имя"
     }
 }

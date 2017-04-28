@@ -39,6 +39,15 @@
       parameters_table: "Technical parameters table",
       prices: "Prices",
       dealers: "Dealers",
-      products: "Boats"
+      products: "Boats",
+      boat_request: "Boat request",
+      mail_comment: "Comment",
+      mail_sel_boat: "Select a boat",
+      mail_boat: "Boat name",
+      fail_mail_msg: "Please enter a right E-mail",
+      send_request_mail: "Send request",
+      mail_name: "Your name",
+      name_example: "Jack Nicholson",
+      mail_name_error: "Pleace enter Your name"
     }
 }

@@ -14,5 +14,16 @@ module RealCraftCom
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:ru, :en]
+    
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.yandex.ru",
+      :port                 => 587,
+      :domain               => 'realcraftboats.com',
+      :user_name            => ENV["RC_APP_MAIL_LOGIN"],
+      :password             => ENV["RC_APP_MAIL_PSWRD"], 
+      :authentication       => 'plain',
+      :enable_starttls_auto => true   }
   end
 end

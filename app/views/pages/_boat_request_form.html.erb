@@ -1,0 +1,50 @@
+<div class = "light-gray-block">
+    <div class = "tb-pad-s">
+        <div class = "row">
+            <div class = "small-12 medium-6 medium-centered columns">
+                <h4>
+                    <%= t(:boat_request) %>
+                </h4>
+            </div>
+        </div>
+        <%= form_for(:boat_request, url: send_boat_request_path, html: {"data-abide"=> "", novalidate: "", remote: true}) do |f| %>
+            <div class = "row">
+                <div class = "small-12 medium-6 medium-centered columns">
+                    <div class = "row">
+                        <div class = "small-12 medium-6 columns">
+                            <%= f.label :email, "E-mail" %>
+                            <%= f.email_field :email, placeholder: "name@domain.com", required: true  %>
+                            <span class="form-error">
+                                <%= t(:fail_mail_msg)%>
+                            </span>
+                        </div>
+                        <div class = "small-12 medium-6 columns">
+                            <%= f.label :name, t(:mail_name) %>
+                            <%= f.text_field :name, placeholder: t(:name_example), required: true  %>
+                            <span class="form-error">
+                                <%= t(:mail_name_error)%>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "small-12 medium-6 medium-centered columns">
+                    <%= f.label :boat_name, t(:mail_boat) %>
+                    <%= f.select :boat_name, boats_with_modifications, {} %>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "small-12 medium-6 medium-centered columns">
+                    <%= f.label :comment, t(:mail_comment) %>
+                    <%= f.text_area :comment %>
+                </div>
+            </div>
+            <div class = 'row'>
+                <div class = "small-12 medium-6 medium-centered columns">
+                    <%= f.submit t(:send_request_mail), class: "button success" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

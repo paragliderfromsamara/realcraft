@@ -51,6 +51,20 @@ module ApplicationHelper
   def hash_boats_list
     [real_craft_190, real_craft_200]
   end
+  
+  def boats_with_modifications
+    val = []
+    hash_boats_list.each do |b|
+      if b[:modifications].blank?
+        val.push(b[:name])
+      else
+        b[:modifications].each do |m|
+          val.push [%{#{b[:name]} #{m[:name]}}, %{#{b[:name]} #{m[:name]}}]
+        end
+      end
+    end
+    return val
+  end
     
   def real_craft_190
     boat_folder = "/boat_pages/rc190"
