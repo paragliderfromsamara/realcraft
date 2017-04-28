@@ -156,7 +156,10 @@ a.locale-link
     z-index: 200;
 }
 
-
+.callout
+{
+    z-index: 201;
+}
 ///reveal
 $reveal-background: $white;
 $reveal-width: 75%;

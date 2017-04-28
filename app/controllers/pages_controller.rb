@@ -30,8 +30,7 @@ class PagesController < ApplicationController
   
   def send_boat_request
     redirect_to "/404" if params[:boat_request].blank?
-    RequestsMailer.boat_request(boat_request_params).deliver_now
-    redirect_to prices_path
+    render js: %{$("#success-request").show();} if RequestsMailer.boat_request(boat_request_params).deliver_now
   end
   
   def please_wait

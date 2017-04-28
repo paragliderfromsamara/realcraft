@@ -7,7 +7,7 @@ class RequestsMailer < ApplicationMailer
   #
   def boat_request(request)
     @request = request
-    mail(to: "romankozvonin@gmail.com", :subject => "Заявка на лодку") do |format|
+    mail(to: "info@realcraftboats.com", :subject => "Заявка на лодку") do |format|
       format.text
       format.html
     end

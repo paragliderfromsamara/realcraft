@@ -48,6 +48,7 @@
       send_request_mail: "Отправить запрос",
       mail_name: "Ваше имя",
       name_example: "Пётр Иванов",
-      mail_name_error: "Укажите Ваше имя"
+      mail_name_error: "Укажите Ваше имя",
+      successfull_boat_request: "Ваша заявка успешно отправлена"
     }
 }

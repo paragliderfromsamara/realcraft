@@ -48,6 +48,7 @@
       send_request_mail: "Send request",
       mail_name: "Your name",
       name_example: "Jack Nicholson",
-      mail_name_error: "Pleace enter Your name"
+      mail_name_error: "Pleace enter Your name",
+      successfull_boat_request: "Your request successfully sent"
     }
 }
