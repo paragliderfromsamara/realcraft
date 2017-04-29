@@ -46,6 +46,7 @@
       mail_boat: "Boat name",
       fail_mail_msg: "Please enter a right E-mail",
       send_request_mail: "Send request",
+      buy: "Buy it boat",
       mail_name: "Your name",
       name_example: "Your name",
       mail_name_error: "Pleace enter Your name",

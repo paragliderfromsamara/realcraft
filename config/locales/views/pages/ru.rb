@@ -46,6 +46,7 @@
       mail_boat: "Название лодки",
       fail_mail_msg: "Необходимо ввести правильный E-mail адрес",
       send_request_mail: "Отправить запрос",
+      buy: "Купить эту лодку",
       mail_name: "Ваше имя",
       name_example: "Ваше имя",
       mail_name_error: "Укажите Ваше имя",

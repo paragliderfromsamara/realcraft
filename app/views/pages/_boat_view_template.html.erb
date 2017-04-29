@@ -95,7 +95,6 @@
             <%= @boat["modifications_present_text_#{cur_locale}".to_sym ]%>
         </div>
     </div>
-    <%# render "boat_request_form" %>
     <% if !@boat[:modifications].blank?  %>
         <%mCounter = 0%>
        <% @boat[:modifications].each do |m| %>
@@ -108,6 +107,11 @@
                        <p>
                            <%= m["description_#{cur_locale}".to_sym] %>
                        </p>
+               </div>
+               <div class = "small-12 large-6 columns text-right">
+                   <a data-open-boat-form = "<%= @boat[:name] %> <%= m[:name] %>" class = "button rc-primary-blue">
+                       <i class = "fi-shopping-cart"></i> <%= t(:buy).mb_chars.upcase %>
+                   </a>
                </div>
            </div>
            <div class = "row tb-pad-s">
@@ -231,3 +235,4 @@
   </div>
 </div>
 
+<%= render "boat_request_form", is_boat_page: true %>

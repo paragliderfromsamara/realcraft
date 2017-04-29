@@ -138,21 +138,8 @@ module PagesHelper
                       {
                         #5-й абзац
                         col_class: "small-12 medium-10 medium-centered text-center",
-                        ru_content: %{Если Вы хотите приобрести лодку, напишите нам на почту #{mail_to "info@realcraftboats.com"}, <br /> или заполните заявку <a onclick="$('.toggled').toggle();">здесь</a>},
-                        en_content: %{If you want to purchase a boat, write us #{mail_to "info@realcraftboats.com"} <br /> or fill a boat request form <a onclick="$('.toggled').toggle();">here</a>}
-                      }
-                   ]
-        },
-        {
-          #wrapper_bg_image: "boat_3_small.jpg",
-          #fog_class: "hard-fog white-bg",
-          is_hidden: true,
-          wrapper_class: "light-gray-block toggled",
-          columns: [
-                      {
-                        #5-й абзац
-                        col_class: "small-12",
-                        content: render("pages/boat_request_form"),
+                        ru_content: %{Если Вы хотите приобрести лодку, напишите нам на почту #{mail_to "info@realcraftboats.com"}, <br /> или заполните заявку <a data-form-in-price>здесь</a>},
+                        en_content: %{If you want to purchase a boat, write us #{mail_to "info@realcraftboats.com"} <br /> or fill a boat request form <a data-form-in-price>here</a>}
                       }
                    ]
         },

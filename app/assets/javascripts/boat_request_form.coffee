@@ -1,21 +1,14 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-selBoat = null
-updLayers = ->
-    v = selBoat.val()
-    idx = 0
-    selBoat.find("option").each (i)->
-        if $(this).val() is v then idx = i
-    $(".boat-block[data-boat-block-idx!=#{idx}]").hide()
-    $(".boat-block[data-boat-block-idx=#{idx}]").show()
 
-r = ()-> 
-    selBoat = document.getElementById("boat_request_boat_name")
-    if selBoat isnt null 
-        selBoat = $(selBoat)
-        updLayers()
-        selBoat.change ()-> updLayers()
-    #elem = new Foundation.Reveal($("#photo-viewer"), {});
-
+r = ->
+    $("[data-open-boat-form]").click -> #отвечает за раскрытие формы на boat_show_template
+        $("#success-request").hide()
+        $("#boat-form-container").find("#boat_request_boat_name").attr('value', $(this).attr('data-open-boat-form'))
+        $('#boat-form-container').foundation('open')
+    $("[data-form-in-price]").click -> #отвечает за раскрытие формы в pages#prices
+        $("#success-request").hide()
+        $('#boat-form-container').foundation('open')
+          
 document.addEventListener("turbolinks:load", r)
