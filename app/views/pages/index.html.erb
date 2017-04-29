@@ -9,7 +9,14 @@
     <div class="orbit-container">
       <%= slider_imgs(main_page_slider_imgs).html_safe  %>
     </div>
-</div>    
+</div> 
+<div class = "light-gray-block">
+    <div class = 'row'>
+        <div class = 'small-12 columns tb-pad-s'>
+            <a href = "/files/Realcraft.pdf" target = '_blank' class = 'button rc-blue expanded' style = "margin: 0 0 0 0;"><i class = 'fi-download'></i> <%= t(:download_brochure).mb_chars.upcase %></a>
+        </div>
+    </div>
+</div>  
 <!--boats list-->
 <% if !hash_boats_list.blank?%>
     <%j=0%>

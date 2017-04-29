@@ -22,6 +22,7 @@
 {
   ru:
     {
+      download_brochure: "Скачать брошюру",
       technical_information: "ХАРАКТЕРИСТИКИ",
       model: "МОДЕЛЬ",
       design_category: "КЛАСС",

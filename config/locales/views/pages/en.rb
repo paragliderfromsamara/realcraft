@@ -22,6 +22,7 @@
 {
   en:
     {
+      download_brochure: "download brochure",
       technical_information: "TECHNICAL INFORMATION",
       model: "MODEL",
       design_category: "DESIGN CATEGORY",
