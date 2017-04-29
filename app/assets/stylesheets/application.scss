@@ -41,6 +41,11 @@
 @include foundation-form-error;
 @include foundation-callout;
 
+.tb-pad-xs
+{
+ padding-top: 1rem;   
+  padding-bottom: 1rem;  
+}
 
 .tb-pad-s
 {

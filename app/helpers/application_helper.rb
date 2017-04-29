@@ -52,18 +52,21 @@ module ApplicationHelper
     [real_craft_190, real_craft_200]
   end
   
-  def boats_with_modifications
-    val = []
-    hash_boats_list.each do |b|
+  def boats_for_request_form
+    vals = []
+    mdfs = []
+    b_list = @boat.nil? ? hash_boats_list : [@boat]
+    b_list.each do |b|
       if b[:modifications].blank?
-        val.push(b[:name])
+        vals.push(b[:name])
       else
         b[:modifications].each do |m|
-          val.push [%{#{b[:name]} #{m[:name]}}, %{#{b[:name]} #{m[:name]}}]
+          vals.push([%{#{b[:name]} #{m[:name]}}, %{#{b[:name]} #{m[:name]}}])
+          mdfs.push({mame: %{#{b[:name]} #{m[:name]}}, mdf: m}) 
         end
       end
     end
-    return val
+    return {vals: vals, mdfs: mdfs}
   end
     
   def real_craft_190

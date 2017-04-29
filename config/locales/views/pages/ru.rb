@@ -47,7 +47,7 @@
       fail_mail_msg: "Необходимо ввести правильный E-mail адрес",
       send_request_mail: "Отправить запрос",
       mail_name: "Ваше имя",
-      name_example: "Пётр Иванов",
+      name_example: "Ваше имя",
       mail_name_error: "Укажите Ваше имя",
       successfull_boat_request: "Ваша заявка успешно отправлена"
     }

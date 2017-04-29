@@ -95,6 +95,7 @@
             <%= @boat["modifications_present_text_#{cur_locale}".to_sym ]%>
         </div>
     </div>
+    <%# render "boat_request_form" %>
     <% if !@boat[:modifications].blank?  %>
         <%mCounter = 0%>
        <% @boat[:modifications].each do |m| %>
