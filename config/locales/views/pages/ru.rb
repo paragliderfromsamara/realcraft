@@ -50,6 +50,7 @@
       mail_name: "Ваше имя",
       name_example: "Ваше имя",
       mail_name_error: "Укажите Ваше имя",
-      successfull_boat_request: "Ваша заявка успешно отправлена"
+      successfull_boat_request: "Ваша заявка успешно отправлена",
+      dealer_request: "Заявка на дилерство"
     }
 }

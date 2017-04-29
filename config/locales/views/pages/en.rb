@@ -50,6 +50,7 @@
       mail_name: "Your name",
       name_example: "Your name",
       mail_name_error: "Pleace enter Your name",
-      successfull_boat_request: "Your request successfully sent"
+      successfull_boat_request: "Your request successfully sent",
+      dealer_request: "Dealer request"
     }
 }

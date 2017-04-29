@@ -1,5 +1,17 @@
-<h1>Requests#dealer_request</h1>
+<h1>Заявка на дилерство</h1>
 
+<h3>
+    Информация об авторе заявки:
+</h3>
 <p>
-  <%= @greeting %>, find me in app/views/requests_mailer/dealer_request.html.erb
+    Имя: <%= @request[:name] %>
+</p>
+<p>
+    Контактный E-mail: <%= @request[:email] %>
+</p>
+<h3>
+    Сообщение
+</h3>
+<p>
+    <%= @request[:comment].blank? ? "Без комментария" : @request[:comment] %>
 </p>

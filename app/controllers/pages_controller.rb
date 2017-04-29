@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :check_request_forms, only: [:send_boat_request, :send_dealer_request]
   def index
   end
 
@@ -29,8 +30,13 @@ class PagesController < ApplicationController
   end
   
   def send_boat_request
-    redirect_to "/404" if params[:boat_request].blank?
+    #redirect_to "/404" if params[:boat_request].blank?
     render js: %{$("#success-request").show();} if RequestsMailer.boat_request(boat_request_params).deliver_now
+  end
+  
+  def send_dealer_request
+    #redirect_to "/404" if params[:dealer_request].blank?
+    render js: %{$("#success-request").show();} if RequestsMailer.dealer_request(dealer_request_params).deliver_now
   end
   
   def please_wait
@@ -39,7 +45,21 @@ class PagesController < ApplicationController
   
   private 
   
+  def check_request_forms
+    f = false
+    if !params[:boat_request].blank?
+      f = !params[:boat_request][:email].blank? && !params[:boat_request][:name].blank? 
+    else !params[:dealer_request].blank?
+      f = !params[:dealer_request][:email].blank? && !params[:dealer_request][:name].blank? 
+    end
+    redirect_to "/404" if !f
+  end
+  
   def boat_request_params
     params.require(:boat_request).permit(:name, :email, :boat_name, :comment)
+  end
+  
+  def dealer_request_params
+    params.require(:dealer_request).permit(:name, :email, :comment)
   end
 end

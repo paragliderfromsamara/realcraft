@@ -10,5 +10,7 @@ r = ->
     $("[data-form-in-price]").click -> #отвечает за раскрытие формы в pages#prices
         $("#success-request").hide()
         $('#boat-form-container').foundation('open')
-          
+    $("[data-form-in-dealers]").click ->
+        $("#success-request").hide()
+        $('#dealer-form-container').foundation('open')
 document.addEventListener("turbolinks:load", r)
