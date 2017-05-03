@@ -118,7 +118,7 @@ fishermen."
                           rcParamsHash(t(:light_craft_mass), t(:kg_short), [554, 596], t(:light_craft_mass_desc)),        #11
                           rcParamsHash(t(:maximum_load_craft_mass), t(:kg_short), [1054, 1096], t(:maximum_load_craft_mass_desc)),  #12
                           rcParamsHash(t(:weight_on_trailer), t(:kg_short), [573, 615]),          #13
-                          rcParamsHash(t(:max_eng_power), t(:hp_short), 50),                      #14
+                          rcParamsHash(t(:max_eng_power), t(:hp_short), (cur_locale == :en ? 50 : 70)),                      #14
                           rcParamsHash(t(:max_eng_mass), t(:kg_short), 162),                      #15
                           rcParamsHash(t(:length_of_st_cable), t(:ft_short), 14),                 #16
                           rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 12),                 #17
@@ -198,7 +198,7 @@ of large loads to the summer house on the islands or just cruises with a good co
         rcParamsHash(t(:light_craft_mass), t(:kg_short), [585, 597], t(:light_craft_mass_desc)),        #11
         rcParamsHash(t(:maximum_load_craft_mass), t(:kg_short), [1085, 1097], t(:maximum_load_craft_mass_desc)),  #12
         rcParamsHash(t(:weight_on_trailer), t(:kg_short), [604, 616]),          #13
-        rcParamsHash(t(:max_eng_power), t(:hp_short), 50),                      #14
+        rcParamsHash(t(:max_eng_power), t(:hp_short), (cur_locale == :en ? 50 : 70)),                      #14
         rcParamsHash(t(:max_eng_mass), t(:kg_short), 162),                      #15
         rcParamsHash(t(:length_of_st_cable), t(:ft_short), 11),                 #16
         rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 9)                   #17
