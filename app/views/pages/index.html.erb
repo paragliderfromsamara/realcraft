@@ -88,7 +88,7 @@
             <div class = "small-12 medium-4 columns tb-pad-s">
                     <a><%= image_tag production_photos("2")[:url], class: "kra-ph-box tb-pad-s", "rc-box-phs".to_sym => production_photos("2")[:list], "rc-box-collection".to_sym => "production"  %></a>
                     <p class = "stat text-center">
-                         12 <%= t :years %>
+                         <%= Time.now.year.to_i - 2004 %> <%= t :years %>
                      </p>
                      <p class = "rc-param-name-b text-center">
                          <%= t :experience_of_shipbuilding %>

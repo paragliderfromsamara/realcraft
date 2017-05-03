@@ -17,10 +17,17 @@
                 <%= t(:contacts) %>
             </h4>
             <p>
+                <% if cur_locale == :en%>
                 Samara Motor-Boat Plant «Salut» (Salut-boats Ltd),<br />
                 Sovetskaya str., 38L, Novosemeykino urban-type settlement, Krasnoyarskiy district,<br />
                 Samara region, Russia, 446379, <br />
                 Tel.:  +7-846-9726801, +7-846-277210<br />
+                <%else%>
+                Самарский завод моторных лодок «СAЛЮТ»,<br />
+                Россия, 446379, Самарская область, Красноярский район,<br />
+                пгт. Новосемейкино, ул. Советская, д. 38л<br />
+                Тел.:  +7-846-9726801, +7-846-277210<br />
+                <%end%>
                 <%= link_to t(:self_url_name), root_path %><br />
                 <%= mail_to "info@realcraftboats.com", "info@realcraftboats.com" %>
             </p>

@@ -69,7 +69,7 @@ module ApplicationHelper
     
   def real_craft_190
     boat_folder = "/boat_pages/rc190"
-    @ru_head_desc = "Realсraft 190 позволит Вам ощутить всё разнообразие отдыха на воде. "
+    @ru_head_desc = "Лодка RealCraft 190 предоставляет владельцу широкие возможности для всех видов отдыха на воде. Увеличенный основной кокпит, широкий проход в носовой кокпит, ровный пол, под которым большие отсеки для хранения якорей, фалов, кранцев и других вещей, предназначенные для спиннингов и удилищ полочки вдоль бортов делают RealCraft 190 отличной лодкой для увлеченного рыболова."
     @en_head_desc = "Realсraft 190 can provide you a wide range of leisure
 activities on the water. Increased main cockpit, wide
 passage to the front cockpit, level floor, spacious units 
@@ -144,7 +144,7 @@ fishermen."
                         },
                      ],
      engeneering_text_en: "Strong hull with a 4-mm bottom of 5083 Al-Mg sheet together with a perfect seagoing performance that is justified by carefully estimated body lines with 11° dead rise angle at the transom provide smooth sailing from first open waters to the late fall. Do not fear storms, stony shores, drowned logs and even floating ice floes. Moreover, the boat is quite cost effective: Realcraft 190 can raise the maximum speed of over 50 kmph due to a 40 powered motor. If the boat carries five people, it shall plane on the water surface of more than 40 kmph. In case you mount an engine of power capability of 50 horsepower these indicators will be much better.",
-     engeneering_text_ru: "ru_text",
+     engeneering_text_ru: "RealCraft 190 предназначен людей, эксплуатирующих свои лодки в самых суровых условиях. Прочный корпус с днищем из 4-миллиметрового листа АМг5М и хорошая мореходность, обусловленная тщательно просчитанными обводами с килеватостью на транце 11 градусов, обеспечивают беспроблемное плавание с открытия навигации до поздней осени. Не опасаясь штормов, каменистых берегов, подтопленных бревен и даже плавающих льдин. При этом лодка лостаточно экономична: с  40-сильным мотором RealCraft 190 способен развивать максимальную скорость около 50 км/час, с экипажем из пяти человек лодка будет глиссировать на скорости выше 40 км/час. Если подвесить двигатель допустимой мощностью 50 л.с., то эти показатели будут гораздо лучше.",
      engeneering_img: "/boat_pages/rc190/schema.png"
                      
     }
@@ -154,7 +154,11 @@ fishermen."
   
   def real_craft_200
     boat_folder = "/boat_pages/rc200"
-    @ru_head_desc = "Realсraft 200 это лодка с передним размещением консолей."
+    @ru_head_desc = "Новейший RealCraft 200 –лодка с задним расположением консолей. 
+    Такая компоновка с большим носовым кокпитом актуальна для различных служб, проводящих спасательные и патрульные операции на воде. 
+    А также для дайвинга, рыбалки, буксировки лыжников, перевозки габаритных грузов на расположенную на островах дачу и просто прогулок с хорошей компанией друзей.
+    Носовой кокпит по периметру опоясан релингами, что повышает безопасность пассажиров на ходу, а рыбаки закрепляют на них стаканы для спиннингов. В носу находится рундук-сиденье, помогающий при выходе на берег и предназначенный для хранения якоря и швартовых. По бортам перед консолями расположены два рундука, а вдоль бортов протянулись полки, куда можно положить удилища. Между бортовыми рундуками под герметичной крышкой форпика закреплен стандартный переносной бензобак – такое расположение не только улучшает центровку, но и соответствует европейским требованиям ISO по разнесению горючего и аккумуляторов на расстояние. Под кормовым диваном большой отсек с аккумулятором и главным выключателем.
+                        "
     @en_head_desc = "The newest Realcraft 200 is a boat with a rear location
 of consoles. Such arrangement together with big fore cockpit is vital for various rescue and patrol operations as well as diving, fishing, towing skiers, transportation
 of large loads to the summer house on the islands or just cruises with a good company of friends."
@@ -223,7 +227,7 @@ of large loads to the summer house on the islands or just cruises with a good co
 well as shelves where you can put fishing rods. You can find a standard portable petrol tank between the broadside lockers under the lid of the floor:
 this location increases the alignment as well as corresponds with ISO European Requirements
 on a distance spacing of petrol and accumulators. There is also a big section with the accumulator and the main switcher under the sternmost couch.",
-     engeneering_text_ru: "ru_text",
+     engeneering_text_ru: "Корпус RealCraft 200 с тщательно рассчитанными обводами имеет угол килеватости 13 градусов на транце, который плавно увеличивается к носу лодки. Две пары реданов проходят не до кормы, а обрываются именно там, где нужно – это результат точной инженерной работы для повышения гидродинамических качеств. Результатом явилась безупречная мореходность и маневренность, а также достойные скоростные качества. С 50-сильным двухтактным мотором и двумя членами экипажа выход на глиссирование занимает 5 секунд, а дифферент при этом не превышает 14º. При максимальной скорости 58 км/час лодка идет на ровном киле!",
      engeneering_img: "/boat_pages/rc200/schema.png"
     }
   end

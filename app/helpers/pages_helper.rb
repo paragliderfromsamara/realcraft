@@ -61,7 +61,7 @@ module PagesHelper
                        {
                          #7-й абзац
                          col_class: "small-12 text-center medium-font",
-                         ru_content: %{Если Вы хотите стать нашим дилером, напишите нам на почту #{mail_to "info@realcraftboats.com"}, или заполните заполните заявку <a data-form-in-dealers>здесь</a> и мы вышлем вам необходимую информацию.},
+                         ru_content: %{Если Вы хотите стать нашим дилером, напишите нам на почту #{mail_to "info@realcraftboats.com"}, или заполните заявку <a data-form-in-dealers>здесь</a> и мы вышлем вам необходимую информацию.},
                          en_content: %{If you want to become our dealer, write us #{mail_to "info@realcraftboats.com"} or fill request form <a data-form-in-dealers>here</a> and we'll send you the necessary information.}
                         }
                    ] 
