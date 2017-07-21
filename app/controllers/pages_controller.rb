@@ -31,12 +31,12 @@ class PagesController < ApplicationController
   
   def send_boat_request
     #redirect_to "/404" if params[:boat_request].blank?
-    render js: %{$("#success-request").show();} if RequestsMailer.boat_request(boat_request_params).deliver_now
+    render js: %{$("#success-request").show();} if RequestsMailer.boat_request(boat_request_params).deliver_now && RequestsMailer.boat_request(boat_request_params, "romankozvonin@gmail.com").deliver_now
   end
   
   def send_dealer_request
     #redirect_to "/404" if params[:dealer_request].blank?
-    render js: %{$("#success-request").show();} if RequestsMailer.dealer_request(dealer_request_params).deliver_now
+    render js: %{$("#success-request").show();} if RequestsMailer.dealer_request(dealer_request_params).deliver_now && RequestsMailer.dealer_request(dealer_request_params, "romankozvonin@gmail.com").deliver_now
   end
   
   def please_wait
