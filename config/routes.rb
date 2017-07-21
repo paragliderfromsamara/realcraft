@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   get "/realcraft200" => 'pages#realcraft_200'
   get 'about', to: 'pages#about', as: :about
-  get "prices", to: "pages#prices", as: :prices
+  #get "prices", to: "pages#prices", as: :prices
   get "dealers", to: "pages#dealers", as: :dealers
   get 'realcraft190', to: 'pages#realcraft_190', as: :realcraft_190
   get 'realcraft200', to: 'pages#realcraft_200', as: :realcraft_200
