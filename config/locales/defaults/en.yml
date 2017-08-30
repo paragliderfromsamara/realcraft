@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  
   self_url_name: "www.realcraftboats.com"
   coming_soon: "Coming soon"
   default_title: "REALCRAFT-Motor Boats"
@@ -80,3 +81,6 @@ en:
   no_videos_msg: "No videos were added."
   no_photos_msg: "No photos were added."
   #messages_end
+  
+  #страны
+  sweden: "Sweden"

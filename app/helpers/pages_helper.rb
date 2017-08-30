@@ -6,6 +6,7 @@ module PagesHelper
   
   def dealers_page_content
     [
+
         {
           wrapper_bg_image: "boat_test_top_1_small.jpg",
           fog_class: "hard-fog white-bg",
@@ -23,35 +24,36 @@ module PagesHelper
                       }
                    ]
         },
-        {
-          row_class: "tb-pad-m",
-          columns: [
-                        {
-                          #4-й абзац
-                          col_class: "small-6",
-                          ru_content: %{Мы предлагаем выгодные условия поставки, гарантируем высокое качество катеров, соблюдение договорных положений о поставках и гарантии.},
-                          en_content: %{We offer favorable terms of delivery and prices, guarantee high quality of boats, compliance with contractual terms for supplies and guarantees.}
-                        },
-                        {
+      #  {
+      #    row_class: "tb-pad-m",
+      #    columns: [
+      #                  {
+      #                    #4-й абзац
+      #                    col_class: "small-6",
+      #                    ru_content: %{Мы предлагаем выгодные условия поставки, гарантируем высокое качество катеров, соблюдение договорных положений о поставках и гарантии.},
+      #                    en_content: %{We offer favorable terms of delivery and prices, guarantee high quality of boats, compliance with contractual terms for supplies and guarantees.}
+      #                  },
+      #                  {
                           #5-й абзац
-                          col_class: "small-6",
-                          ru_content: %{Предлагаемые нами условия позволят приобрести в Европе лодку высокого качества по самой привлекательной цене с учетом  интереса дилера.},
-                          en_content: %{Our offer will allow to purchase a high quality boat in Europe at the most attractive price, taking into account the dealer's interest.}
-                        }
-                   ] 
-        },
-        {
-          wrapper_class: "blue-block",
-          row_class: "tb-pad-m",
-          columns: [
-                       {
+      #                    col_class: "small-6",
+      #                    ru_content: %{Предлагаемые нами условия позволят приобрести в Европе лодку высокого качества по самой привлекательной цене с учетом  интереса дилера.},
+       #                   en_content: %{Our offer will allow to purchase a high quality boat in Europe at the most attractive price, taking into account the dealer's interest.}
+      #                  }
+       #            ] 
+       # },
+        
+        #{
+        #  wrapper_class: "blue-block",
+        #  row_class: "tb-pad-m",
+        #  columns: [
+        #               {
                          #6-й абзац
-                          col_class: "small-12 text-center medium-font", 
-                          ru_content: %{Для первых – пробных поставок предусмотрены специальные условия.},
-                          en_content: %{For the first - trial delivery special conditions are provided.}
-                        }
-                   ] 
-        },
+        #                  col_class: "small-12 text-center medium-font", 
+        #                  ru_content: %{Для первых – пробных поставок предусмотрены специальные условия.},
+        #                  en_content: %{For the first - trial delivery special conditions are provided.}
+        #                }
+        #           ] 
+        #},
         {
           wrapper_class: "blue-bg",
           wrapper_bg_image: "boat_1_small.jpg",
@@ -157,6 +159,45 @@ module PagesHelper
                       }
                    ]
         }
+    ]
+  end
+  def draw_dealers_list
+    v = ''
+    dealers_list.each do |country|
+      country_dealers = ''
+      country[:dealers].each do |d|
+
+        t = %{<h6 class="subheader">#{d[:name].nil? ? d["#{cur_locale}_name".to_sym] : d[:name]}</h6>}
+        t += %{<p>#{d[:address]}</p>}
+        t += %{<p>#{d[:phone]}</p>} if !d[:phone].blank?
+        t += %{<p><a href = 'http://#{d[:web_site]}' target = '_blank'>#{d[:web_site]}</a></p>}
+        t += %{<p>#{mail_to d[:email]}</p>} if !d[:email].blank?
+        t += %{<a target = '_blank' href = 'http://#{d[:web_site]}'><img src = '/dealers/#{d[:logo]}'></a>} if !d[:logo].blank?
+        country_dealers += %{<div class = 'column column-block  tb-pad-s'>#{t}</div>}
+      end
+      v += %{<div class = 'row'><div class = "small-12 columns"><h4 >#{country[:country]}</h4></div></div><div class = 'row small-up-1 medium-up-2 large-up-3'>#{country_dealers}</div>}
+    end
+  
+    return v
+  end
+  
+  def dealers_list
+    [
+      {
+      country: t(:sweden),
+      dealers: 
+      [
+        {
+          name: "High Tech Solutions AB",
+          address: "Hejargatan 6, 74951 Grillby",
+          web_site: 'www.hightechsolutions.se/marine',
+          email: 'marine@hightechsolutions.se',
+          phone: '+46 70-850 22 32',
+          email: 'marine@hightechsolutions.se',
+          logo: 'logo_hts.png' 
+        }
+      ]
+     }
     ]
   end
 end
