@@ -11,6 +11,14 @@ module ServiceFunctionsHelper
        I18n.locale
   end
   
+  def is_ru?
+    cur_locale == :ru
+  end
+  
+  def is_com?
+    cur_locale == :com
+  end
+  
   def opposite_locale
     cur_locale == :ru ? :en : :ru
   end

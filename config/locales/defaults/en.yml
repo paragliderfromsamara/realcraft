@@ -70,6 +70,8 @@ en:
   weight_on_trailer: "Weight on trailer"
   length_of_st_cable: "Length of steering cable"
   length_of_rc_cable: "Length of remote control cable"
+  transom_height: "Transom height"
+  depth: "Depth"
   #boat_parameters names end
 
   #boat_parameters description

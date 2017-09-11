@@ -29,6 +29,22 @@ class PagesController < ApplicationController
     @meta_content = @boat["slogan_#{cur_locale}".to_sym]
   end
   
+  def realcraft_440
+    redirect_to '/404' unless is_ru?
+    @boat = real_craft_440
+    @title = @boat[:name]
+    @page_image = '/slider/rc200/4_slider_xlarge.jpg' 
+    @meta_content = @boat["slogan_#{cur_locale}".to_sym]
+  end
+  
+  def realcraft_470
+    redirect_to '/404' unless is_ru?
+    @boat = real_craft_470
+    @title = @boat[:name]
+    @page_image = '/slider/rc200/4_slider_xlarge.jpg' 
+    @meta_content = @boat["slogan_#{cur_locale}".to_sym]
+  end
+  
   def send_boat_request
     #redirect_to "/404" if params[:boat_request].blank?
     render js: %{$("#success-request").show();} if RequestsMailer.boat_request(boat_request_params).deliver_now && RequestsMailer.boat_request(boat_request_params, "romankozvonin@gmail.com").deliver_now

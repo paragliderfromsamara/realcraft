@@ -9,11 +9,21 @@ module ApplicationHelper
     %{/content_blocks_images/#{img}}
   end
   def main_page_slider_imgs #изображения слайдера с главной страницы
-    [
-      "/slider/rc200/4_slider_small.jpg",
-      "/slider/index/1_small.jpg",
-      "/slider/index/4_small.jpg"
-    ]
+    if is_ru?
+      [
+        "/slider/rc470/1_slider_small.jpg",
+        "/slider/rc440/2_slider_small.jpg",
+        "/slider/index/1_small.jpg",
+        "/slider/index/4_small.jpg"
+      ]
+    else
+      [
+        "/slider/rc200/4_slider_small.jpg",
+        "/slider/index/1_small.jpg",
+        "/slider/index/4_small.jpg"
+      ]
+    end
+
   end
   
   def make_photos_links(photos, boat_folder)
@@ -49,7 +59,7 @@ module ApplicationHelper
   end
   
   def hash_boats_list
-    [real_craft_190, real_craft_200]
+    is_ru? ? [real_craft_440, real_craft_470, real_craft_190, real_craft_200] : [real_craft_190, real_craft_200]
   end
   
   def boats_for_request_form
@@ -231,6 +241,139 @@ on a distance spacing of petrol and accumulators. There is also a big section wi
      engeneering_img: "/boat_pages/rc200/schema.png"
     }
   end
+  
+  
+  def real_craft_440
+    boat_folder = "/boat_pages/rc440"
+    @ru_head_desc = ""
+    @en_head_desc = ""
+    @ru_slogan = ""
+    @en_slogan = ""
+    v = {
+      url: realcraft_440_path,
+      name: "REALCRAFT 440",
+      modifications_present_text_en: "",
+      modifications_present_text_ru: "Лодки Realcraft 440 могут в следующих модификациях.",
+      slider_images: [
+                        "/slider/rc440/3_slider_small.jpg",
+                        "/slider/rc440/2_slider_small.jpg",
+                        "/slider/rc440/1_slider_small.jpg"
+                     ],
+      design_category: "C",
+      slogan_ru: @ru_slogan, 
+      slogan_en: @en_slogan, 
+      header_description_ru: @ru_head_desc, 
+      header_description_en: @en_head_desc, 
+      index_page_parameters: [11, 4, 5],
+      main_params_big: [0,4,5],
+      main_params_small: [1,2,3,11,7,8],
+      boat_parameters: [
+        rcParamsHash(t(:crew_limit), t(:pers_short), 5),                     #0
+        rcParamsHash(t(:max_permitted_load), t(:kg_short), 500),             #1
+        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 3),              #2
+        rcParamsHash(t(:hull_thickness), t(:mm_short), 3),                   #3
+        rcParamsHash(t(:length_of_hull), t(:m_short), 4.47),                  #4
+        rcParamsHash(t(:beam_of_hull), t(:m_short), 1.98),                    #5
+        rcParamsHash(t(:max_length), t(:m_short), 4.79),                      #6
+        #rcParamsHash(t(:max_beam), t(:m_short), 1.98),                        #7
+        #rcParamsHash(t(:transom_beam), t(:m_short), 1.88),                   #8
+        rcParamsHash(t(:bot_deadrise_angle), "˚", 7),                       #9
+        rcParamsHash(t(:empty_craft_mass), t(:kg_short), 270),        #10
+        rcParamsHash(t(:light_craft_mass), t(:kg_short), 480, t(:light_craft_mass_desc)),        #11
+        rcParamsHash(t(:maximum_load_craft_mass), t(:kg_short), 980, t(:maximum_load_craft_mass_desc)),  #12
+        #rcParamsHash(t(:weight_on_trailer), t(:kg_short), [604, 616]),          #13
+        rcParamsHash(t(:max_eng_power), t(:hp_short), 50),                      #14
+        rcParamsHash(t(:transom_height), t(:m_short), [0.38, 0.51]) #rcParamsHash(t(:max_eng_mass), t(:kg_short), 162),                      #15
+        #rcParamsHash(t(:length_of_st_cable), t(:ft_short), 11),                 #16
+        #rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 9)                   #17
+                       ],  
+      photos: make_photos_links([1,2,3,4,5,6,7,8,9,10, 11, 12, 13], boat_folder),
+      videos: [
+        "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/fy06QI-Xn28\" frameborder=\"0\" allowfullscreen></iframe>"
+      ],
+      modifications: [
+                        {
+                          name: "BD Comfort",
+                          model_view_imgs: [],#model_view_imgs_name.map {|i| {url: "/boat_pages/rc200/pro/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: [],
+                          arrangement_img: "#{boat_folder}/bd_comfort/arrangement.jpg",
+                          description_en: "",
+                          description_ru: ""
+                        }
+                     ],
+     engeneering_text_en: "",
+     engeneering_text_ru: "",
+     engeneering_img: ""
+    }
+  end
+  
+  def real_craft_470
+    boat_folder = "/boat_pages/rc470"
+    @ru_head_desc = ""
+    @en_head_desc = ""
+    @ru_slogan = ""
+    @en_slogan = ""
+    v = {
+      url: realcraft_470_path,
+      name: "REALCRAFT 470",
+      modifications_present_text_en: "",
+      modifications_present_text_ru: "Лодки Realcraft 470 могут в следующих модификациях.",
+      slider_images: [
+                        "/slider/rc470/4_slider_small.jpg",
+                        "/slider/rc470/3_slider_small.jpg",
+                        "/slider/rc470/2_slider_small.jpg",
+                        "/slider/rc470/1_slider_small.jpg"
+                     ],
+      design_category: "C",
+      slogan_ru: @ru_slogan, 
+      slogan_en: @en_slogan, 
+      header_description_ru: @ru_head_desc, 
+      header_description_en: @en_head_desc, 
+      index_page_parameters: [13, 4, 5],
+      main_params_big: [0,4,5],
+      main_params_small: [1,2,3,13,9,10],
+      boat_parameters: [
+        rcParamsHash(t(:crew_limit), t(:pers_short), 5),                     #0
+        rcParamsHash(t(:max_permitted_load), t(:kg_short), 500),             #1
+        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 3),              #2
+        rcParamsHash(t(:hull_thickness), t(:mm_short), 3),                   #3
+        rcParamsHash(t(:length_of_hull), t(:m_short), 4.67),                  #4
+        rcParamsHash(t(:beam_of_hull), t(:m_short), 1.93),                    #5
+        rcParamsHash(t(:max_length), t(:m_short), 5.12),                      #6
+        rcParamsHash(t(:max_beam), t(:m_short), 1.88),                        #7
+        rcParamsHash(t(:transom_beam), t(:m_short), 1.88),                   #8
+        rcParamsHash(t(:bot_deadrise_angle), "˚", 14),                       #9
+        rcParamsHash(t(:empty_craft_mass), t(:kg_short), 288),        #10
+        rcParamsHash(t(:light_craft_mass), t(:kg_short), 495, t(:light_craft_mass_desc)),        #11
+        rcParamsHash(t(:maximum_load_craft_mass), t(:kg_short), 995, t(:maximum_load_craft_mass_desc)),  #12
+        #rcParamsHash(t(:weight_on_trailer), t(:kg_short), [604, 616]),          #13
+        rcParamsHash(t(:max_eng_power), t(:hp_short), 60),                      #14
+        rcParamsHash(t(:depth), t(:m_short), 0.91),                      #15
+        rcParamsHash(t(:transom_height), t(:m_short), 0.51) #rcParamsHash(t(:length_of_st_cable), t(:ft_short), 11),                 #16
+        #rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 9)                   #17
+                       ],  
+      photos: make_photos_links([1,2,3,4,5,6,7,8,9,10, 11, 12, 13], boat_folder),
+      videos: [
+        "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/8xUUhNDKnKM\" frameborder=\"0\" allowfullscreen></iframe>",
+        "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/ZQGWSANkzUM\" frameborder=\"0\" allowfullscreen></iframe>"
+      ],
+      modifications: [
+                        {
+                          name: "FISH PRO",
+                          model_view_imgs: [],#model_view_imgs_name.map {|i| {url: "/boat_pages/rc200/pro/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: [],
+                          arrangement_img: "#{boat_folder}/fish_pro/arrangement.jpg",
+                          description_en: "",
+                          description_ru: ""
+                        }
+                     ],
+     engeneering_text_en: "",
+     engeneering_text_ru: "",
+     engeneering_img: ""
+    }
+  end
+  
+  
   
   def slider_imgs(imgs) #imgs - это массив содерщий ссылки на фотографии small
     return "" if imgs.blank?

@@ -93,6 +93,14 @@
                                 <li>
                                     <%= link_to "RealCraft 200", realcraft_200_path %>
                                 </li>
+                                <% if is_ru? %>
+                                    <li>
+                                        <%= link_to "RealCraft 440", realcraft_440_path %>
+                                    </li>
+                                    <li>
+                                        <%= link_to "RealCraft 470", realcraft_470_path %>
+                                    </li>
+                                <% end %>
                             </ul>
                         </li>
                         <!-- <li class = "top-bar-links text-center"><%# link_to t(:prices), prices_path %></li> -->

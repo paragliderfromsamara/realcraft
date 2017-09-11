@@ -21,7 +21,7 @@
         <%= slider_imgs(@boat[:slider_images]).html_safe  %>
     </ul>
 </div> 
-
+<% if !@boat["header_description_#{cur_locale}".to_sym].blank? %>
 <div class = "c-box hide-for-large dark-blue-bg">
     <div class = "row tb-pad-s">
         <div class = "small-12 columns">
@@ -32,7 +32,7 @@
         </div>
     </div>
 </div>
-
+<%end%>
 
 <div id="rc-parameters" class = "white-text ">
     <div class = "tb-pad-m">
@@ -117,9 +117,11 @@
            <div class = "row tb-pad-s">
                <div class = "small-12 medium-6 hide-for-large columns">
                    <h3><%= m[:name] %></h3>
+                   <% if !m["description_#{cur_locale}".to_sym].blank? %>
                        <p>
                            <%= m["description_#{cur_locale}".to_sym] %>
                        </p>
+                   <% end %>
                </div>
                <% m[:model_view_imgs].each do |i|%>
                    <div class = "small-12 medium-6 large-4 columns">
@@ -129,12 +131,13 @@
                    </div>
                <%end%>
            </div>
+           <% unless m[:acc_views_imgs].blank? %>
            <div class = "row">
                <div class = "small-12 columns">
                <h5>
                    <%= t(:crew_accomodation).mb_chars.upcase %>
                </h5>
-           </div>
+               </div>
            </div>
            <div class = "row tb-pad-s">
                <div class = "medium-12 large-2 columns">
@@ -146,10 +149,17 @@
                    <div class = "small-12 medium-6 large-5 columns">
                        <h7><%= t(:scheme) %> <%= j.to_s %></h7>
                        <%= image_tag i %>
-                       
                    </div>
                <%end%>
            </div>
+           <%end %>
+           <%unless m[:arrangement_img].blank? %>
+           <div class = "row tb-pad-s">
+               <div class = "small-12 columns">
+                   <%= image_tag m[:arrangement_img] %>
+               </div>
+           </div>
+           <%end%>
            </div>
  
        <%end%> 
@@ -165,6 +175,7 @@
                 <%= rc_header(t(:engeneering), @boat[:name])  %>
             </div>
         </div>
+        <%unless @boat[:engeneering_img].blank? || @boat["engeneering_text_#{cur_locale}".to_sym].blank? %>
         <div class = "row">
             <div class = "small-12 medium-5 columns tb-pad-s">
                 <p>
@@ -175,6 +186,7 @@
                 <%= image_tag @boat[:engeneering_img] %>            
             </div>
         </div>
+        <%end%>
         <%= render "boat_params_table" %>
     </div>
   </div>
@@ -213,24 +225,25 @@
                 <%= rc_header(t(:videos), @boat[:name])  %>
             </div>
         </div>
-        <div class = "row tb-pad-m">
-            <% if @boat[:videos].blank? %>
-                <div class = "small-12 columns">
-                    <p>
-                        <%= t(:no_videos_msg) %>
-                    </p>
-                </div>
-            <%else%>
-                <% @boat[:videos].each do |v|%>
+        <% if @boat[:videos].blank? %>
+            <div class = "row tb-pad-m">
+                    <div class = "small-12 columns">
+                        <p>
+                            <%= t(:no_videos_msg) %>
+                        </p>
+                    </div>
+            </div>
+        <%else%>
+            <% @boat[:videos].each do |v|%>
+            <div class = "row tb-pad-s">
                 <div class = "small-12 medium-8 large-7 small-centered columns">
                     <div class="flex-video widescreen">
                       <%= v.html_safe %>
                     </div>
                 </div>
-                <%end%>
+            </div>
             <%end%>
-
-        </div>
+        <%end%>
     </div>
   </div>
 </div>

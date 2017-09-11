@@ -68,6 +68,8 @@ ru:
   weight_on_trailer: "масса на трейлере"
   length_of_st_cable: "длина рулевого троса"
   length_of_rc_cable: "длина кабелей управления"
+  transom_height: "высота транца"
+  depth: "высота борта"
   #boat_parameters names end
   
   #boat_parameters description
