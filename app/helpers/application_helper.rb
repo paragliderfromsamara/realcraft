@@ -365,6 +365,14 @@ on a distance spacing of petrol and accumulators. There is also a big section wi
                           arrangement_img: "#{boat_folder}/fish_pro/arrangement.jpg",
                           description_en: "",
                           description_ru: ""
+                        },
+                        {
+                          name: "BD Comfort",
+                          model_view_imgs: [],#model_view_imgs_name.map {|i| {url: "/boat_pages/rc200/pro/#{i[:url]}", title: i[:title]}},
+                          acc_views_imgs: [],
+                          arrangement_img: "#{boat_folder}/bd_comfort/arrangement.jpg",
+                          description_en: "",
+                          description_ru: ""
                         }
                      ],
      engeneering_text_en: "",
