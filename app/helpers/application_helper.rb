@@ -12,13 +12,16 @@ module ApplicationHelper
     if is_ru?
       [
         "/slider/rc470/1_slider_small.jpg",
+        "/slider/rc200/7_slider_small.jpg",
         "/slider/rc440/2_slider_small.jpg",
+        "/slider/rc200/6_slider_small.jpg",
         "/slider/index/1_small.jpg",
         "/slider/index/4_small.jpg"
       ]
     else
       [
-        "/slider/rc200/4_slider_small.jpg",
+        "/slider/rc200/7_slider_small.jpg",
+        "/slider/rc200/6_slider_small.jpg",
         "/slider/index/1_small.jpg",
         "/slider/index/4_small.jpg"
       ]
@@ -180,7 +183,10 @@ of large loads to the summer house on the islands or just cruises with a good co
       modifications_present_text_en: "Realcraft 190 boats can be delivered in several versions of equipment packages of bow cockpit and main cockpit seats",
       modifications_present_text_ru: "Лодки Realcraft 190 могут поставляться в двух модификациях носового кокпита и кресел основного кокпита.",
       slider_images: [
-                        "/slider/rc200/4_slider_small.jpg",
+                        "/slider/rc200/8_slider_small.jpg",
+                        "/slider/rc200/7_slider_small.jpg",
+                        "/slider/rc200/6_slider_small.jpg",
+                        "/slider/rc200/5_slider_small.jpg",
                         "/slider/rc200/1_slider_small.jpg",
                         "/slider/rc200/2_slider_small.jpg",
                         "/slider/rc200/3_slider_small.jpg",
@@ -213,7 +219,7 @@ of large loads to the summer house on the islands or just cruises with a good co
         rcParamsHash(t(:length_of_st_cable), t(:ft_short), 11),                 #16
         rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 9)                   #17
                        ], 
-      photos: make_photos_links([1,2,3,4], boat_folder),
+      photos: make_photos_links([1,2,3,4, 5, 6, 7, 8, 9, 10], boat_folder),
       videos: [
         "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/J0JQXQbo01M\" frameborder=\"0\" allowfullscreen></iframe>"
       ],
@@ -287,7 +293,7 @@ on a distance spacing of petrol and accumulators. There is also a big section wi
         #rcParamsHash(t(:length_of_st_cable), t(:ft_short), 11),                 #16
         #rcParamsHash(t(:length_of_rc_cable), t(:ft_short), 9)                   #17
                        ],  
-      photos: make_photos_links([1,2,3,4,5,6,7,8,9,10, 11, 12, 13], boat_folder),
+      photos: make_photos_links([1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 15,16,17,18,19,20,21,22,23,24], boat_folder),
       videos: [
         "<iframe width=\"496\" height=\"279\" src=\"https://www.youtube.com/embed/fy06QI-Xn28\" frameborder=\"0\" allowfullscreen></iframe>"
       ],
