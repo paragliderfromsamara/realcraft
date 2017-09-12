@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   end
   
   def realcraft_440
-    redirect_to '/404' unless is_ru?
+    redirect_to root_path unless is_ru?
     @boat = real_craft_440
     @title = @boat[:name]
     @page_image = '/slider/rc200/4_slider_xlarge.jpg' 
@@ -38,7 +38,7 @@ class PagesController < ApplicationController
   end
   
   def realcraft_470
-    redirect_to '/404' unless is_ru?
+    redirect_to root_path unless is_ru?
     @boat = real_craft_470
     @title = @boat[:name]
     @page_image = '/slider/rc200/4_slider_xlarge.jpg' 
