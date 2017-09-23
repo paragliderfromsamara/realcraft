@@ -103,7 +103,14 @@
                                 <% end %>
                             </ul>
                         </li>
-                        <!-- <li class = "top-bar-links text-center"><%# link_to t(:prices), prices_path %></li> -->
+                        <% if is_ru? %> 
+                            <li class = "top-bar-links text-center">
+                                <a target = '_blank' href = 'http://www.salut-boats.ru/configurator/?lfb_action=preview&form=20000'>
+                                    <%= t(:prices) %>
+                                </a>
+                                    <%# link_to t(:prices), 'www.salut-boats.ru/configurator/?lfb_action=preview&form=20000' %>
+                            </li> 
+                        <%end%>
                         <li class = "top-bar-links text-center"><%= link_to t(:dealers), dealers_path %></li>
                         <li class = "top-bar-links text-center">
                             <%= link_to t(:about), about_path %>
