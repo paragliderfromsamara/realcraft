@@ -276,7 +276,7 @@ on a distance spacing of petrol and accumulators. There is also a big section wi
       boat_parameters: [
         rcParamsHash(t(:crew_limit), t(:pers_short), 5),                     #0
         rcParamsHash(t(:max_permitted_load), t(:kg_short), 500),             #1
-        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 3),              #2
+        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 2),              #2
         rcParamsHash(t(:hull_thickness), t(:mm_short), 3),                   #3
         rcParamsHash(t(:length_of_hull), t(:m_short), 4.47),                  #4
         rcParamsHash(t(:beam_of_hull), t(:m_short), 1.98),                    #5
@@ -341,7 +341,7 @@ on a distance spacing of petrol and accumulators. There is also a big section wi
       boat_parameters: [
         rcParamsHash(t(:crew_limit), t(:pers_short), 5),                     #0
         rcParamsHash(t(:max_permitted_load), t(:kg_short), 500),             #1
-        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 3),              #2
+        rcParamsHash(t(:freeboard_thickness), t(:mm_short), 2),              #2
         rcParamsHash(t(:hull_thickness), t(:mm_short), 3),                   #3
         rcParamsHash(t(:length_of_hull), t(:m_short), 4.67),                  #4
         rcParamsHash(t(:beam_of_hull), t(:m_short), 1.93),                    #5
