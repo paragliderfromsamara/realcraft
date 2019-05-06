@@ -172,7 +172,7 @@ module PagesHelper
         t += %{<p>#{d[:phone]}</p>} if !d[:phone].blank?
         t += %{<p><a href = 'http://#{d[:web_site]}' target = '_blank'>#{d[:web_site]}</a></p>}
         t += %{<p>#{mail_to d[:email]}</p>} if !d[:email].blank?
-        t += %{<a target = '_blank' href = 'http://#{d[:web_site]}'><img src = '/dealers/#{d[:logo]}'></a>} if !d[:logo].blank?
+        t += %{<a target = '_blank' href = 'http://#{d[:web_site]}'>#{image_tag %{#{d[:logo]}}, width: '200px' }</a>} if !d[:logo].blank?
         country_dealers += %{<div class = 'column column-block  tb-pad-s'>#{t}</div>}
       end
       v += %{<div class = 'row'><div class = "small-12 columns"><h4 >#{country[:country]}</h4></div></div><div class = 'row small-up-1 medium-up-2 large-up-3'>#{country_dealers}</div>}
@@ -180,7 +180,7 @@ module PagesHelper
   
     return v
   end
-  
+
   def dealers_list
     [
       {
@@ -188,13 +188,12 @@ module PagesHelper
       dealers: 
       [
         {
-          name: "High Tech Solutions AB",
-          address: "Hejargatan 6, 74951 Grillby",
-          web_site: 'www.hightechsolutions.se/marine',
-          email: 'marine@hightechsolutions.se',
-          phone: '+46 70-850 22 32',
-          email: 'marine@hightechsolutions.se',
-          logo: 'logo_hts.png' 
+          name: "Realcraft Boats Sweden AB",
+          address: "Hejargatan 6, 74952 Grillby",
+          web_site: 'www.realcraftboats.se',
+          phone: '+46 70 677 44 95',
+          email: 'info@realcraftboats.se ',
+          logo: 'logo_colorful.png' 
         }
       ]
      }
